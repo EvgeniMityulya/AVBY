@@ -9,21 +9,59 @@
 /* Begin PBXBuildFile section */
 		7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */; };
 		7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */; };
-		7BB652012B1E0C39003DB863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652002B1E0C39003DB863 /* ViewController.swift */; };
+		7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652002B1E0C39003DB863 /* SearchViewController.swift */; };
 		7BB652042B1E0C39003DB863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652022B1E0C39003DB863 /* Main.storyboard */; };
 		7BB652062B1E0C3A003DB863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652052B1E0C3A003DB863 /* Assets.xcassets */; };
 		7BB652092B1E0C3A003DB863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652072B1E0C3A003DB863 /* LaunchScreen.storyboard */; };
+		7BB652372B1E5C1B003DB863 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652362B1E5C1B003DB863 /* TabBarController.swift */; };
+		7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */; };
+		7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */; };
+		7BB652432B1F693C003DB863 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652422B1F693C003DB863 /* Icons.swift */; };
+		7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */; };
+		7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */; };
+		7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652482B1F6B77003DB863 /* DialogViewController.swift */; };
+		7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */; };
+		7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */; };
+		7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */; };
+		7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652762B208512003DB863 /* CatalogBuilder.swift */; };
+		7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652782B208521003DB863 /* CatalogPresenter.swift */; };
+		7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */; };
+		7BB6527D2B2091D6003DB863 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527C2B2091D6003DB863 /* Car.swift */; };
+		7BB6527F2B2091FC003DB863 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527E2B2091FC003DB863 /* BodyType.swift */; };
+		7BB652832B20924B003DB863 /* EngineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652822B20924B003DB863 /* EngineType.swift */; };
+		7BB652852B209304003DB863 /* SellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652842B209304003DB863 /* SellStatus.swift */; };
+		7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652862B2095A8003DB863 /* UIView + Extensions.swift */; };
+		7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7BB651F92B1E0C39003DB863 /* AVBY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVBY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BB652002B1E0C39003DB863 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BB652002B1E0C39003DB863 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7BB652032B1E0C39003DB863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BB652052B1E0C3A003DB863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BB652082B1E0C3A003DB863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BB6520A2B1E0C3A003DB863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB652362B1E5C1B003DB863 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilder.swift; sourceTree = "<group>"; };
+		7BB652422B1F693C003DB863 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		7BB652482B1F6B77003DB863 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		7BB652762B208512003DB863 /* CatalogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBuilder.swift; sourceTree = "<group>"; };
+		7BB652782B208521003DB863 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		7BB6527C2B2091D6003DB863 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		7BB6527E2B2091FC003DB863 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		7BB652822B20924B003DB863 /* EngineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineType.swift; sourceTree = "<group>"; };
+		7BB652842B209304003DB863 /* SellStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStatus.swift; sourceTree = "<group>"; };
+		7BB652862B2095A8003DB863 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +94,146 @@
 		7BB651FB2B1E0C39003DB863 /* AVBY */ = {
 			isa = PBXGroup;
 			children = (
-				7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */,
-				7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */,
-				7BB652002B1E0C39003DB863 /* ViewController.swift */,
+				7BB652812B209211003DB863 /* Common */,
+				7BB652412B1F692B003DB863 /* Models */,
+				7BB6523A2B1E5D06003DB863 /* View Controllers */,
+				7BB652392B1E5CF6003DB863 /* Navigation */,
+				7BB652382B1E5CC2003DB863 /* Resources */,
 				7BB652022B1E0C39003DB863 /* Main.storyboard */,
-				7BB652052B1E0C3A003DB863 /* Assets.xcassets */,
 				7BB652072B1E0C3A003DB863 /* LaunchScreen.storyboard */,
 				7BB6520A2B1E0C3A003DB863 /* Info.plist */,
 			);
 			path = AVBY;
+			sourceTree = "<group>";
+		};
+		7BB652382B1E5CC2003DB863 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */,
+				7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */,
+				7BB652052B1E0C3A003DB863 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7BB652392B1E5CF6003DB863 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652362B1E5C1B003DB863 /* TabBarController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7BB6523A2B1E5D06003DB863 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6523B2B1E5D19003DB863 /* SearchViewController */,
+				7BB6524C2B1F6B95003DB863 /* FavouriteViewController */,
+				7BB6524D2B1F6B9E003DB863 /* AnnouncementViewController */,
+				7BB6524E2B1F6BA9003DB863 /* DialogViewController */,
+				7BB6524F2B1F6BAE003DB863 /* OtherViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7BB6523B2B1E5D19003DB863 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6523C2B1E5D9A003DB863 /* RootViewController */,
+				7BB652552B1FB8B5003DB863 /* CatalogViewController */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		7BB6523C2B1E5D9A003DB863 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652002B1E0C39003DB863 /* SearchViewController.swift */,
+				7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */,
+				7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		7BB652412B1F692B003DB863 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652422B1F693C003DB863 /* Icons.swift */,
+				7BB6527C2B2091D6003DB863 /* Car.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7BB6524C2B1F6B95003DB863 /* FavouriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */,
+			);
+			path = FavouriteViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524D2B1F6B9E003DB863 /* AnnouncementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */,
+			);
+			path = AnnouncementViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524E2B1F6BA9003DB863 /* DialogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652482B1F6B77003DB863 /* DialogViewController.swift */,
+			);
+			path = DialogViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524F2B1F6BAE003DB863 /* OtherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */,
+			);
+			path = OtherViewController;
+			sourceTree = "<group>";
+		};
+		7BB652502B1F70CE003DB863 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */,
+				7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */,
+				7BB652862B2095A8003DB863 /* UIView + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BB652552B1FB8B5003DB863 /* CatalogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */,
+				7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */,
+				7BB652782B208521003DB863 /* CatalogPresenter.swift */,
+				7BB652762B208512003DB863 /* CatalogBuilder.swift */,
+			);
+			path = CatalogViewController;
+			sourceTree = "<group>";
+		};
+		7BB652802B209209003DB863 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6527E2B2091FC003DB863 /* BodyType.swift */,
+				7BB652822B20924B003DB863 /* EngineType.swift */,
+				7BB652842B209304003DB863 /* SellStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7BB652812B209211003DB863 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652802B209209003DB863 /* Enums */,
+				7BB652502B1F70CE003DB863 /* Extensions */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +307,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BB652012B1E0C39003DB863 /* ViewController.swift in Sources */,
+				7BB652432B1F693C003DB863 /* Icons.swift in Sources */,
+				7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */,
+				7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */,
+				7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */,
+				7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */,
+				7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */,
+				7BB652372B1E5C1B003DB863 /* TabBarController.swift in Sources */,
+				7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */,
+				7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */,
+				7BB652832B20924B003DB863 /* EngineType.swift in Sources */,
+				7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */,
+				7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */,
+				7BB6527F2B2091FC003DB863 /* BodyType.swift in Sources */,
+				7BB652852B209304003DB863 /* SellStatus.swift in Sources */,
+				7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */,
+				7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */,
 				7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */,
+				7BB6527D2B2091D6003DB863 /* Car.swift in Sources */,
 				7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */,
+				7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */,
+				7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */,
+				7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
