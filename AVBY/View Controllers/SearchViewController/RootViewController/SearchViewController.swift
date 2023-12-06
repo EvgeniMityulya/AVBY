@@ -13,11 +13,11 @@ protocol SearchViewInput: AnyObject {
 }
 
 class SearchViewController: UIViewController {
-
+    
     var output: SearchViewOutput?
     
     private let openCatalogButton = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewDidLoad()
@@ -39,7 +39,7 @@ extension SearchViewController: SearchViewInput {
     }
     
     func configureConstraints() {
-        view.backgroundColor = .red
+        view.backgroundColor = .backgroundViewControllerColor
         
         view.addSubview(openCatalogButton)
         
@@ -50,7 +50,7 @@ extension SearchViewController: SearchViewInput {
         openCatalogButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
-   
+    
     func configureButtons() {
         openCatalogButton.setTitle("Open catalog", for: .normal)
         openCatalogButton.addTarget(self, action: #selector(openCatalogButtonTouchUpInside), for: .touchUpInside)

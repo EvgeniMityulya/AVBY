@@ -25,7 +25,8 @@ final class SearchPresenter: SearchViewOutput {
     }
     
     func openCatalogButtonTouchUpInside() {
-        input.pushViewController(withViewController: CatalogViewController())
+        let viewController = CatalogBuilder.setupModule()
+        input.pushViewController(withViewController: viewController)
     }
     
 }
