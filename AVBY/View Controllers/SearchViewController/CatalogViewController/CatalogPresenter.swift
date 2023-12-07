@@ -9,7 +9,7 @@ import Foundation
 
 protocol CatalogViewOutput {
     func viewDidLoad()
-//    func openCatalogButtonTouchUpInside()
+    func viewWillAppear()
 }
 
 final class CatalogPresenter: CatalogViewOutput {
@@ -23,6 +23,10 @@ final class CatalogPresenter: CatalogViewOutput {
     func viewDidLoad() {
         input.configureUI()
         input.configureConstraints()
+    }
+    
+    func viewWillAppear() {
+        input.configureNavigationBar()
     }
     
 //    func openCatalogButtonTouchUpInside() {

@@ -8,9 +8,9 @@
 import UIKit
 
 protocol CatalogViewInput: AnyObject {
-    func viewDidLoad()
     func configureUI()
     func configureConstraints()
+    func configureNavigationBar()
 }
 
 class CatalogViewController: UIViewController {
@@ -27,13 +27,22 @@ class CatalogViewController: UIViewController {
         catalogTableView.delegate = self
         output?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        output?.viewWillAppear()
+    }
 }
 
 extension CatalogViewController: CatalogViewInput {
+    func configureNavigationBar() {
+        self.navigationController?.setupMavigationBar(backgroundColor: .cellColor, titleColor: .titleColor, title: "Объявления", sender: self)
+    }
+    
     func configureUI() {
         view.backgroundColor = .backgroundViewControllerColor
         
         catalogTableView.backgroundColor = .clear
+        catalogTableView.separatorStyle = .none
         catalogTableView.register(CarTableViewCell.self, forCellReuseIdentifier: "CarCell")
     }
     

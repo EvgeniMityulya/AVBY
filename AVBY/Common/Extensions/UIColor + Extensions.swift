@@ -16,19 +16,19 @@ extension UIColor {
         return UIColor(named: "tabBar") ?? .white
     }
     
-    static var iconColor: UIColor {
-        return UIColor(named: "icon") ?? .black
+    static var titleColor: UIColor {
+        return UIColor(named: "title") ?? .black
     }
     
-    static var iconTouchedColor: UIColor {
-        return UIColor(named: "iconTouched") ?? .black
+    static var subtitleColor: UIColor {
+        return UIColor(named: "subtitle") ?? .black
     }
     
     static var cellColor: UIColor {
-        return UIColor(named: "cell") ?? .black
+        return UIColor(named: "backgroundCell") ?? .black
     }
     
-    static var separatorColor: UIColor {
-        return UIColor(named: "separate") ?? .black
+    static var iconColor: UIColor {
+        return UIColor(named: "icon") ?? .black
     }
 }
