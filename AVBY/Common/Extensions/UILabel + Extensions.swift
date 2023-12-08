@@ -15,4 +15,13 @@ extension UILabel {
             self.text = text
         }
     }
+    
+    func setLetterSpacing(spacing: CGFloat) {
+        let labelText = self.text ?? ""
+        
+        let attributedString = NSMutableAttributedString(string: labelText)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: spacing, range: NSRange(location: 0, length: attributedString.length))
+        
+        self.attributedText = attributedString
+    }
 }

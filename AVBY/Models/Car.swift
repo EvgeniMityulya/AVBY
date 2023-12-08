@@ -19,6 +19,9 @@ struct Car {
     let bodyType: BodyType
     let engineType: EngineType
     let imageName: String
+    let announcementStatus: [AnnouncementStatus]
+    let city: String
+    let date: String
     let sellStatus: SellStatus
     let about: String
     
@@ -32,6 +35,9 @@ struct Car {
             bodyType: .coupe,
             engineType: .diesel,
             imageName: "car0",
+            announcementStatus: [.top],
+            city: "Минск",
+            date: "31 декабря",
             sellStatus: .leasing,
             about: """
                    Nissan Silvia S15 Рестайлинг - это стильный купе с мощным дизельным двигателем.
@@ -49,6 +55,9 @@ struct Car {
             bodyType: .sedan,
             engineType: .gasoline,
             imageName: "car1",
+            announcementStatus: [.top, .vin],
+            city: "Минск",
+            date: "31 декабря",
             sellStatus: .credit,
             about: "Описание Toyota Camry"),
         
@@ -60,6 +69,9 @@ struct Car {
             bodyType: .suv,
             engineType: .hybrid,
             imageName: "car2",
+            announcementStatus: [.top, .vin],
+            city: "Минск",
+            date: "31 декабря",
             sellStatus: .credit,
             about: "Описание Honda CR-V"),
         
@@ -71,6 +83,9 @@ struct Car {
             bodyType: .coupe,
             engineType: .gasoline,
             imageName: "car3",
+            announcementStatus: [.top, .vin],
+            city: "Минск",
+            date: "31 декабря",
             sellStatus: .credit,
             about: "Описание Audi A5 Sportback"),
         
@@ -82,6 +97,9 @@ struct Car {
             bodyType: .sedan,
             engineType: .electric,
             imageName: "car4",
+            announcementStatus: [.top, .vin],
+            city: "Минск",
+            date: "31 декабря",
             sellStatus: .credit,
             about: "Описание Tesla Model 3")
     ]

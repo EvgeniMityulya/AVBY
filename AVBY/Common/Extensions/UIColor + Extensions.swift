@@ -31,4 +31,17 @@ extension UIColor {
     static var iconColor: UIColor {
         return UIColor(named: "icon") ?? .black
     }
+    
+    static var separatorColor: UIColor {
+        return UIColor(named: "separate") ?? .black
+    }
+    
+    static var topColor: UIColor {
+        return UIColor(named: "top") ?? .black
+    }
+    
+    static var vinColor: UIColor {
+        return UIColor(named: "vin") ?? .black
+    }
+
 }
