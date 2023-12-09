@@ -43,5 +43,10 @@ extension UIColor {
     static var vinColor: UIColor {
         return UIColor(named: "vin") ?? .black
     }
+    
+    static var buttonTextColor: UIColor {
+        return UIColor(named: "buttonText") ?? .black
+    }
+
 
 }

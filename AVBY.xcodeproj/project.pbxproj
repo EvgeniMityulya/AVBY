@@ -41,6 +41,7 @@
 		7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652AF2B234AC8003DB863 /* ImagePosition.swift */; };
 		7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */; };
 		7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */; };
+		7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B62B24794D003DB863 /* BuyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		7BB652AF2B234AC8003DB863 /* ImagePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePosition.swift; sourceTree = "<group>"; };
 		7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewBuilder.swift; sourceTree = "<group>"; };
 		7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewConfiguration.swift; sourceTree = "<group>"; };
+		7BB652B62B24794D003DB863 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 				7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */,
 				7BB652B52B2381A0003DB863 /* IconView */,
 				7BB652AE2B234AA2003DB863 /* Enums */,
+				7BB652B62B24794D003DB863 /* BuyButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */,
 				7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */,
 				7BB6529C2B23370D003DB863 /* UIImage + Extensions.swift in Sources */,
+				7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */,
 				7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */,
 				7BB6527D2B2091D6003DB863 /* Car.swift in Sources */,
 				7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */,

@@ -27,9 +27,10 @@ final class CarTableViewCell: UITableViewCell {
     
     //    private let carImageCollectionView = UICollectionView()
     
+    private let announcementStatusStackView = UIStackView()
     private let announcementDetailsLabel = UILabel()
     private let separatorView = UIView()
-    private let announcementStatusStackView = UIStackView()
+    private let buyButton = BuyButton()
     
     
     override func layoutSubviews() {
@@ -59,12 +60,13 @@ final class CarTableViewCell: UITableViewCell {
         announcementStatusStackView.backgroundColor = .clear
         
         carNameLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .medium)
-        carAboutLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .regular)
+        carAboutLabel.applyTextStyle(textColor: .titleColor, fontSize: 16, weight: .regular)
         announcementDetailsLabel.applyTextStyle(textColor: .subtitle, fontSize: 14, weight: .regular)
         
         configurePriceLabel(rubles: car.priceRubles, dollars: car.priceDollars)
         configureAnnouncementDetailsLabel(city: car.city, date: car.date)
         carAboutLabel.text = configureAboutLabel(car: car)
+        buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5)
         
         announcementStatusStackView.axis = .horizontal
         announcementStatusStackView.distribution = .fill
@@ -97,6 +99,7 @@ final class CarTableViewCell: UITableViewCell {
         announcementDetailsLabel.translatesAutoresizingMaskIntoConstraints = false
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         announcementStatusStackView.translatesAutoresizingMaskIntoConstraints = false
+        buyButton.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(overlayView)
         
@@ -106,9 +109,10 @@ final class CarTableViewCell: UITableViewCell {
             favouriteButton,
             carPriceLabel,
             carAboutLabel,
+            announcementStatusStackView,
             announcementDetailsLabel,
             separatorView,
-            announcementStatusStackView
+            buyButton
         )
         
         // MARK: - Views
@@ -138,18 +142,26 @@ final class CarTableViewCell: UITableViewCell {
             carAboutLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             carAboutLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
             
-            announcementDetailsLabel.topAnchor.constraint(equalTo: carAboutLabel.bottomAnchor, constant: 5),
+            announcementStatusStackView.topAnchor.constraint(equalTo: carAboutLabel.bottomAnchor, constant: 10),
+            announcementStatusStackView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
+//            announcementStatusStackView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -10),
+
+            announcementDetailsLabel.topAnchor.constraint(equalTo: announcementStatusStackView.bottomAnchor, constant: 10),
             announcementDetailsLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             announcementDetailsLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
             
-            separatorView.topAnchor.constraint(equalTo: announcementDetailsLabel.bottomAnchor, constant: 5),
+            separatorView.topAnchor.constraint(equalTo: announcementDetailsLabel.bottomAnchor, constant: 15),
             separatorView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             separatorView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 1),
             
-            announcementStatusStackView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 10),
-            announcementStatusStackView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
-            announcementStatusStackView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -10),
+            
+            buyButton.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 5),
+            buyButton.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
+            buyButton.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
+            buyButton.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -5),
+
+            
         ])
     }
     
