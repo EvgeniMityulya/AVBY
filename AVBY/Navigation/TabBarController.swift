@@ -14,10 +14,6 @@ class TabBarController: UITabBarController {
         configure()
     }
     
-    override func viewDidLayoutSubviews() {
-        self.tabBar.backgroundColor = .tabBarColor
-    }
-    
     private func configure() {
         // MARK: - View Controllers
         
@@ -45,8 +41,7 @@ class TabBarController: UITabBarController {
         
         
         // MARK: - Configure UI
-        tabBar.backgroundColor = UIColor(named: "tabBarColor")
-        tabBar.barTintColor = .white
+        
         
         tabBar.items?[0].image = UIImage(systemName: Icons.magnifyingglass)
         tabBar.items?[0].title = "Поиск"

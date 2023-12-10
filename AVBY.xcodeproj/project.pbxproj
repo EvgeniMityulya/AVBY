@@ -42,6 +42,8 @@
 		7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */; };
 		7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */; };
 		7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B62B24794D003DB863 /* BuyButton.swift */; };
+		7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */; };
+		7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewBuilder.swift; sourceTree = "<group>"; };
 		7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewConfiguration.swift; sourceTree = "<group>"; };
 		7BB652B62B24794D003DB863 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,8 +227,9 @@
 				7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */,
 				7BB652862B2095A8003DB863 /* UIView + Extensions.swift */,
 				7BB6528A2B21E08E003DB863 /* UILabel + Extensions.swift */,
-				7BB6528F2B2215CD003DB863 /* UINavigationController + Extensions.swift */,
 				7BB6529B2B23370D003DB863 /* UIImage + Extensions.swift */,
+				7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */,
+				7BB6528F2B2215CD003DB863 /* UINavigationController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,11 +268,11 @@
 		7BB6528C2B21E57B003DB863 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */,
-				7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */,
+				7BB652BB2B24913F003DB863 /* CarTableViewCell */,
+				7BB652BC2B249150003DB863 /* CarImagesCollectionView */,
+				7BB652BA2B249128003DB863 /* BuyButton */,
 				7BB652B52B2381A0003DB863 /* IconView */,
 				7BB652AE2B234AA2003DB863 /* Enums */,
-				7BB652B62B24794D003DB863 /* BuyButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -288,6 +293,31 @@
 				7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */,
 			);
 			path = IconView;
+			sourceTree = "<group>";
+		};
+		7BB652BA2B249128003DB863 /* BuyButton */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652B62B24794D003DB863 /* BuyButton.swift */,
+			);
+			path = BuyButton;
+			sourceTree = "<group>";
+		};
+		7BB652BB2B24913F003DB863 /* CarTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */,
+			);
+			path = CarTableViewCell;
+			sourceTree = "<group>";
+		};
+		7BB652BC2B249150003DB863 /* CarImagesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */,
+				7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */,
+			);
+			path = CarImagesCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +404,7 @@
 				7BB652832B20924B003DB863 /* EngineType.swift in Sources */,
 				7BB652A32B23418E003DB863 /* IconView.swift in Sources */,
 				7BB652902B2215CD003DB863 /* UINavigationController + Extensions.swift in Sources */,
+				7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */,
 				7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */,
 				7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */,
 				7BB6528E2B21E655003DB863 /* CarImagesCollectionView.swift in Sources */,
@@ -388,6 +419,7 @@
 				7BB6527D2B2091D6003DB863 /* Car.swift in Sources */,
 				7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */,
 				7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */,
+				7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */,
 				7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */,
 				7BB652922B22740F003DB863 /* AnnouncementStatus.swift in Sources */,
 				7BB6528B2B21E08E003DB863 /* UILabel + Extensions.swift in Sources */,

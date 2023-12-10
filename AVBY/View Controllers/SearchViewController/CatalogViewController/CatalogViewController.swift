@@ -35,7 +35,8 @@ class CatalogViewController: UIViewController {
 
 extension CatalogViewController: CatalogViewInput {
     func configureNavigationBar() {
-        self.navigationController?.setupMavigationBar(backgroundColor: .cellColor, titleColor: .titleColor, title: "Объявления", sender: self)
+        self.navigationController?.setupMavigationBar(backgroundColor: .tabBarColor, titleColor: .titleColor, title: "Объявления", sender: self)
+        self.tabBarController?.setupTabBar(backgroundColor: .tabBarColor, unselectedItemTintColor: .barIconUnactiveColor, selectedItemTintColor: .barIconActiveColor)
     }
     
     func configureUI() {
@@ -43,6 +44,7 @@ extension CatalogViewController: CatalogViewInput {
         
         catalogTableView.backgroundColor = .clear
         catalogTableView.separatorStyle = .none
+        catalogTableView.contentInset =  UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         catalogTableView.register(CarTableViewCell.self, forCellReuseIdentifier: "CarCell")
     }
     

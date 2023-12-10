@@ -18,7 +18,7 @@ struct Car {
     }
     let bodyType: BodyType
     let engineType: EngineType
-    let imageName: String
+    let imageName: [String]
     let announcementStatus: [AnnouncementStatus]
     let city: String
     let date: String
@@ -34,7 +34,7 @@ struct Car {
             priceDollars: 20_000.7,
             bodyType: .coupe,
             engineType: .diesel,
-            imageName: "car0",
+            imageName: ["nissan1", "nissan2", "nissan3"],
             announcementStatus: [.top],
             city: "Минск",
             date: "31 декабря",
@@ -54,7 +54,7 @@ struct Car {
             priceDollars: 25_000.0,
             bodyType: .sedan,
             engineType: .gasoline,
-            imageName: "car1",
+            imageName: ["toyota1", "toyota2", "toyota3"],
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",
@@ -68,7 +68,7 @@ struct Car {
             priceDollars: 22_500.5,
             bodyType: .suv,
             engineType: .hybrid,
-            imageName: "car2",
+            imageName: ["honda1", "honda2", "honda3"],
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",
@@ -82,7 +82,7 @@ struct Car {
             priceDollars: 45_000.8,
             bodyType: .coupe,
             engineType: .gasoline,
-            imageName: "car3",
+            imageName: ["car3"],
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",
@@ -96,7 +96,7 @@ struct Car {
             priceDollars: 50_000.0,
             bodyType: .sedan,
             engineType: .electric,
-            imageName: "car4",
+            imageName: ["car4"],
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",

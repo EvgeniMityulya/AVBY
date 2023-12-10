@@ -28,7 +28,6 @@ class IconView: UIView, IconViewConfigurable {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        print("1231312")
         configure(with: IconViewConfiguration())
         configureConstraints(position: .left, width: 1, height: 1)
     }

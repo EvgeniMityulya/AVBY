@@ -48,5 +48,12 @@ extension UIColor {
         return UIColor(named: "buttonText") ?? .black
     }
 
+    static var barIconUnactiveColor: UIColor {
+        return UIColor(named: "barIconUnactive") ?? .black
+    }
+
+    static var barIconActiveColor: UIColor {
+        return UIColor(named: "barIconActive") ?? .black
+    }
 
 }

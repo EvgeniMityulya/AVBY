@@ -21,11 +21,9 @@ final class CarTableViewCell: UITableViewCell {
     private let hideButton = UIButton()
     private let favouriteButton = UIButton()
     
-    //    private let carImageCollectionView = UICollectionView()
+    private let carImagesCollectionView = CarImagesCollectionView()
     
     private let carAboutLabel = UILabel()
-    
-    //    private let carImageCollectionView = UICollectionView()
     
     private let announcementStatusStackView = UIStackView()
     private let announcementDetailsLabel = UILabel()
@@ -36,8 +34,6 @@ final class CarTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         configureConstraints()
-        
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -67,12 +63,12 @@ final class CarTableViewCell: UITableViewCell {
         configureAnnouncementDetailsLabel(city: car.city, date: car.date)
         carAboutLabel.text = configureAboutLabel(car: car)
         buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5)
+        carImagesCollectionView.setupCollectionView(car: car)
         
         announcementStatusStackView.axis = .horizontal
         announcementStatusStackView.distribution = .fill
         announcementStatusStackView.alignment = .leading
         announcementStatusStackView.spacing = 5
-        
         
         carNameLabel.numberOfLines = 0
         carPriceLabel.numberOfLines = 0
@@ -95,6 +91,7 @@ final class CarTableViewCell: UITableViewCell {
         favouriteButton.translatesAutoresizingMaskIntoConstraints = false
         hideButton.translatesAutoresizingMaskIntoConstraints = false
         carPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        carImagesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         carAboutLabel.translatesAutoresizingMaskIntoConstraints = false
         announcementDetailsLabel.translatesAutoresizingMaskIntoConstraints = false
         separatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +105,7 @@ final class CarTableViewCell: UITableViewCell {
             hideButton,
             favouriteButton,
             carPriceLabel,
+            carImagesCollectionView,
             carAboutLabel,
             announcementStatusStackView,
             announcementDetailsLabel,
@@ -138,7 +136,12 @@ final class CarTableViewCell: UITableViewCell {
             carPriceLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             carPriceLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
             
-            carAboutLabel.topAnchor.constraint(equalTo: carPriceLabel.bottomAnchor, constant: 5),
+            carImagesCollectionView.topAnchor.constraint(equalTo: carPriceLabel.bottomAnchor, constant: 10),
+            carImagesCollectionView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor),
+            carImagesCollectionView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor),
+            carImagesCollectionView.heightAnchor.constraint(equalToConstant: 115),
+            
+            carAboutLabel.topAnchor.constraint(equalTo: carImagesCollectionView.bottomAnchor, constant: 10),
             carAboutLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             carAboutLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
             
@@ -225,14 +228,9 @@ final class CarTableViewCell: UITableViewCell {
             case .top:
                 topView.translatesAutoresizingMaskIntoConstraints = false
                 announcementStatusStackView.addArrangedSubview(topView)
-//                topView1.translatesAutoresizingMaskIntoConstraints = false
-//                announcementStatusStackView.addArrangedSubview(topView1)
-                
-                print("new")
             case .vin:
                 vinView.translatesAutoresizingMaskIntoConstraints = false
                 announcementStatusStackView.addArrangedSubview(vinView)
-                print("new")
             case .new:
                 print("new")
             case .video:
