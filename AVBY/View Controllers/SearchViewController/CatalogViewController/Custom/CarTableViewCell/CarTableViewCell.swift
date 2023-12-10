@@ -9,83 +9,113 @@ import UIKit
 
 final class CarTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
     private var indexPath: IndexPath?
     private var car: Car?
     
-    private let overlayView = UIView()
+    // MARK: - UI Elements
     
+    private let overlayView = UIView()
     private let carNameLabel = UILabel()
     private let carPriceLabel = UILabel()
     private let separatorLabel = UILabel()
     private let carPriceDollarsLabel = UILabel()
     private let hideButton = UIButton()
     private let favouriteButton = UIButton()
-    
     private let carImagesCollectionView = CarImagesCollectionView()
-    
     private let carAboutLabel = UILabel()
-    
     private let announcementStatusStackView = UIStackView()
     private let announcementDetailsLabel = UILabel()
     private let separatorView = UIView()
     private let buyButton = BuyButton()
     
+    // MARK: - Lifecycle Methods
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupStyles()
         configureConstraints()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupStyles()
         configureConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setupStyles()
         configureConstraints()
     }
     
+    // MARK: - Public Methods
     
     func configure(car: Car, indexPath: IndexPath) {
         self.car = car
         self.indexPath = indexPath
         self.backgroundColor = .clear
         carNameLabel.text = car.name
-        configureStatusViews(status: car.announcementStatus)
-        announcementStatusStackView.backgroundColor = .clear
-        
+        configureStatusStackView(status: car.announcementStatus)
+        configurePriceLabel(rubles: car.priceRubles, dollars: car.priceDollars)
+        configureAnnouncementDetailsLabel(city: car.city, date: car.date)
+        configureAboutLabel(car: car)
+        buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5)
+        carImagesCollectionView.setupCollectionView(car: car)
+    }
+    
+    @objc private func hideButtonTapped() {
+        // Handle hide button tap
+        print("Hide button tapped for indexPath: \(String(describing: indexPath?.row))")
+    }
+    
+    @objc private func favouriteButtonTapped() {
+        // Handle favourite button tap
+        print("Favourite button tapped for indexPath: \(String(describing: indexPath?.row))")
+    }
+    
+    @objc private func buyButtonTapped() {
+        // Handle favourite button tap
+        print("Buy button tapped for indexPath: \(String(describing: indexPath?.row))")
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setupStyles() {
+        // Labels
         carNameLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .medium)
         carAboutLabel.applyTextStyle(textColor: .titleColor, fontSize: 16, weight: .regular)
         announcementDetailsLabel.applyTextStyle(textColor: .subtitle, fontSize: 14, weight: .regular)
-        
-        configurePriceLabel(rubles: car.priceRubles, dollars: car.priceDollars)
-        configureAnnouncementDetailsLabel(city: car.city, date: car.date)
-        carAboutLabel.text = configureAboutLabel(car: car)
-        buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5)
-        carImagesCollectionView.setupCollectionView(car: car)
-        
-        announcementStatusStackView.axis = .horizontal
-        announcementStatusStackView.distribution = .fill
-        announcementStatusStackView.alignment = .leading
-        announcementStatusStackView.spacing = 5
-        
         carNameLabel.numberOfLines = 0
         carPriceLabel.numberOfLines = 0
         carAboutLabel.numberOfLines = 0
         
+        // Buttons
         hideButton.configure(with: Icons.eyeSlash, pointSize: 20, weight: .semibold)
         favouriteButton.configure(with: Icons.bookmark, pointSize: 20, weight: .semibold)
-        
         favouriteButton.tintColor = .iconColor
         hideButton.tintColor = .iconColor
-        separatorView.backgroundColor = .separatorColor
         
+        // Add targets to buttons
+        hideButton.addTarget(self, action: #selector(hideButtonTapped), for: .touchUpInside)
+        favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
+        buyButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
+        
+        // Views
         overlayView.backgroundColor = .cellColor
         overlayView.layer.cornerRadius = 10
+        separatorView.backgroundColor = .separatorColor
+        
+        // Stack Views
+        announcementStatusStackView.backgroundColor = .clear
+        announcementStatusStackView.axis = .horizontal
+        announcementStatusStackView.distribution = .fill
+        announcementStatusStackView.alignment = .leading
+        announcementStatusStackView.spacing = 5
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         overlayView.translatesAutoresizingMaskIntoConstraints = false
         carNameLabel.translatesAutoresizingMaskIntoConstraints = false
         favouriteButton.translatesAutoresizingMaskIntoConstraints = false
@@ -112,8 +142,6 @@ final class CarTableViewCell: UITableViewCell {
             separatorView,
             buyButton
         )
-        
-        // MARK: - Views
         
         NSLayoutConstraint.activate([
             overlayView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
@@ -147,8 +175,7 @@ final class CarTableViewCell: UITableViewCell {
             
             announcementStatusStackView.topAnchor.constraint(equalTo: carAboutLabel.bottomAnchor, constant: 10),
             announcementStatusStackView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
-//            announcementStatusStackView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -10),
-
+            
             announcementDetailsLabel.topAnchor.constraint(equalTo: announcementStatusStackView.bottomAnchor, constant: 10),
             announcementDetailsLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             announcementDetailsLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
@@ -158,17 +185,16 @@ final class CarTableViewCell: UITableViewCell {
             separatorView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 1),
             
-            
             buyButton.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 5),
             buyButton.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 10),
             buyButton.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
             buyButton.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -5),
-
+            
             
         ])
     }
     
-    func configureStatusViews(status: [AnnouncementStatus]) {
+    private func configureStatusStackView(status: [AnnouncementStatus]) {
         let topViewConfiguration = IconViewConfiguration(
             systemName: Icons.starFill,
             title: "ТОП",
@@ -182,7 +208,7 @@ final class CarTableViewCell: UITableViewCell {
             fontSize: 10,
             fontWeight: .semibold
         )
-
+        
         let topView = IconViewBuilder()
             .setConfiguration(topViewConfiguration)
             .setPosition(.left)
@@ -190,12 +216,12 @@ final class CarTableViewCell: UITableViewCell {
             .setHeight(20)
             .build()
         
-//        let topView1 = IconViewBuilder()
-//            .setConfiguration(topViewConfiguration)
-//            .setPosition(.left)
-//            .setWidth(50)
-//            .setHeight(20)
-//            .build()
+        //        let topView1 = IconViewBuilder()
+        //            .setConfiguration(topViewConfiguration)
+        //            .setPosition(.left)
+        //            .setWidth(50)
+        //            .setHeight(20)
+        //            .build()
         
         let vinViewConfiguration = IconViewConfiguration(
             systemName: Icons.checkmark,
@@ -210,14 +236,14 @@ final class CarTableViewCell: UITableViewCell {
             fontSize: 10,
             fontWeight: .semibold
         )
-
+        
         let vinView = IconViewBuilder()
             .setConfiguration(vinViewConfiguration)
             .setPosition(.right)
             .setWidth(45)
             .setHeight(20)
             .build()
-
+        
         announcementStatusStackView.arrangedSubviews.forEach { view in
             announcementStatusStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -239,7 +265,7 @@ final class CarTableViewCell: UITableViewCell {
         }
     }
     
-    func configurePriceLabel(rubles: Double, dollars: Double) {
+    private func configurePriceLabel(rubles: Double, dollars: Double) {
         let rubles = String(Int(rubles))
         let separator = " р."
         let dollars = " ≈ " + String(Int(dollars)) + " $"
@@ -268,7 +294,7 @@ final class CarTableViewCell: UITableViewCell {
         carPriceLabel.attributedText = attributedString
     }
     
-    func configureAboutLabel(car: Car) -> String {
+    private func configureAboutLabel(car: Car) {
         var resultStr = ""
         var engine = ""
         var type = ""
@@ -296,10 +322,10 @@ final class CarTableViewCell: UITableViewCell {
         }
         
         resultStr = "\(car.releaseYear) г., \(car.capacity) л, \(engine), \(type), \(car.milieage) км"
-        return resultStr
+        carAboutLabel.text = resultStr
     }
     
-    func configureAnnouncementDetailsLabel(city: String, date: String) {
+    private func configureAnnouncementDetailsLabel(city: String, date: String) {
         let city = city
         let separator = "·"
         let date = date

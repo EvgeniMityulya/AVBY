@@ -34,6 +34,7 @@ extension SearchViewController: SearchViewInput {
     }
     
     func configureUI() {
+//        title = ""
         configureConstraints()
         configureButtons()
     }

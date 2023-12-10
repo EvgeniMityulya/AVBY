@@ -9,7 +9,7 @@ import UIKit
 
 protocol IconViewBuildable {
     func setConfiguration(_ configuration: IconViewConfiguration) -> Self
-    func setPosition(_ position: IconViewPosition) -> Self
+    func setPosition(_ position: Position) -> Self
     func setWidth(_ width: CGFloat) -> Self
     func setHeight(_ height: CGFloat) -> Self
     func build() -> IconView
@@ -17,7 +17,7 @@ protocol IconViewBuildable {
 
 class IconViewBuilder: IconViewBuildable {
     private var configuration: IconViewConfiguration = IconViewConfiguration()
-    private var position: IconViewPosition = .left
+    private var position: Position = .left
     private var width: CGFloat = 1
     private var height: CGFloat = 1
 
@@ -26,7 +26,7 @@ class IconViewBuilder: IconViewBuildable {
         return self
     }
 
-    func setPosition(_ position: IconViewPosition) -> Self {
+    func setPosition(_ position: Position) -> Self {
         self.position = position
         return self
     }

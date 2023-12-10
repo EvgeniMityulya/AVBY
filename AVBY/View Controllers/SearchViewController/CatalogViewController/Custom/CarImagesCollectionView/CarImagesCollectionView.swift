@@ -9,11 +9,15 @@ import UIKit
 
 class CarImagesCollectionView: UICollectionView {
     
+    // MARK: - Properties
+    
     private var car: Car? {
         didSet {
             reloadData()
         }
     }
+    
+    // MARK: - Initialization
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -25,10 +29,11 @@ class CarImagesCollectionView: UICollectionView {
         configureCollectionView()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public Methods
     
     func setupCollectionView(car: Car) {
         self.car = car
@@ -46,6 +51,8 @@ class CarImagesCollectionView: UICollectionView {
         self.dataSource = self
     }
 }
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension CarImagesCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,6 +79,8 @@ extension CarImagesCollectionView: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension CarImagesCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

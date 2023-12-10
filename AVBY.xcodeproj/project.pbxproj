@@ -44,6 +44,9 @@
 		7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B62B24794D003DB863 /* BuyButton.swift */; };
 		7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */; };
 		7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */; };
+		7BB652C32B25EAD8003DB863 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C22B25EAD8003DB863 /* Position.swift */; };
+		7BB652C52B261189003DB863 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C42B261189003DB863 /* IconButton.swift */; };
+		7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C62B261EEA003DB863 /* IconTextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		7BB652B62B24794D003DB863 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
 		7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652C22B25EAD8003DB863 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Position.swift; path = ../../../../Position.swift; sourceTree = "<group>"; };
+		7BB652C42B261189003DB863 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		7BB652C62B261EEA003DB863 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 				7BB652822B20924B003DB863 /* EngineType.swift */,
 				7BB652912B22740F003DB863 /* AnnouncementStatus.swift */,
 				7BB652842B209304003DB863 /* SellStatus.swift */,
+				7BB652C22B25EAD8003DB863 /* Position.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -299,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				7BB652B62B24794D003DB863 /* BuyButton.swift */,
+				7BB652C42B261189003DB863 /* IconButton.swift */,
+				7BB652C62B261EEA003DB863 /* IconTextButton.swift */,
 			);
 			path = BuyButton;
 			sourceTree = "<group>";
@@ -391,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB652C52B261189003DB863 /* IconButton.swift in Sources */,
 				7BB652432B1F693C003DB863 /* Icons.swift in Sources */,
 				7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */,
 				7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */,
@@ -406,6 +416,7 @@
 				7BB652902B2215CD003DB863 /* UINavigationController + Extensions.swift in Sources */,
 				7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */,
 				7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */,
+				7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */,
 				7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */,
 				7BB6528E2B21E655003DB863 /* CarImagesCollectionView.swift in Sources */,
 				7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */,
@@ -419,6 +430,7 @@
 				7BB6527D2B2091D6003DB863 /* Car.swift in Sources */,
 				7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */,
 				7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */,
+				7BB652C32B25EAD8003DB863 /* Position.swift in Sources */,
 				7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */,
 				7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */,
 				7BB652922B22740F003DB863 /* AnnouncementStatus.swift in Sources */,

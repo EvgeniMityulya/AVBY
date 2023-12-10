@@ -9,6 +9,8 @@ import UIKit
 
 class CarImagesCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
     var isFirstCell: Bool = false {
         didSet {
             updateCornerRadius()
@@ -21,8 +23,11 @@ class CarImagesCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - UI Elements
     
     private let imageView = UIImageView()
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,10 +39,14 @@ class CarImagesCollectionViewCell: UICollectionViewCell {
         setupViews()
     }
     
+    // MARK: - Lifecycle
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         resetCornerRadius()
     }
+    
+    // MARK: - Public Methods
     
     func configure(with imageName: String) {
         if let image = UIImage(named: imageName) {
@@ -46,6 +55,8 @@ class CarImagesCollectionViewCell: UICollectionViewCell {
             imageView.image = UIImage(named: "noImage")
         }
     }
+    
+    // MARK: - Private Methods
     
     private func setupViews() {
         configureImageView()
@@ -67,7 +78,7 @@ class CarImagesCollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
     }
     
-    func resetCornerRadius() {
+    private func resetCornerRadius() {
         imageView.layer.cornerRadius = 0
         imageView.layer.maskedCorners = []
     }

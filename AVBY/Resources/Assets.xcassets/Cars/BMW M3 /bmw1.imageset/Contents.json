@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

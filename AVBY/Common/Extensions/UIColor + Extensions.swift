@@ -56,4 +56,7 @@ extension UIColor {
         return UIColor(named: "barIconActive") ?? .black
     }
 
+    static var bottomButtonColor: UIColor {
+        return UIColor(named: "bottomButton") ?? .black
+    }
 }

@@ -17,6 +17,9 @@ struct Icons {
     static let eyeSlash = "eye.slash"
     static let checkmark = "checkmark"
     static let bookmark = "bookmark"
+    static let arrowUpDown = "arrow.up.arrow.down"
+    static let sparkleMagnifyingglass = "sparkle.magnifyingglass"
+    static let gearshape = "gearshape.2"
     
 }
 

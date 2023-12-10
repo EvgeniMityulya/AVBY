@@ -9,12 +9,18 @@ import UIKit
 
 class BuyButton: UIButton {
     
+    // MARK: - Properties
+
     private let leftLabel = UILabel()
     private let rightLabel = UILabel()
+    
+    // MARK: - Public Methods
     
     func setText(sellStatus: SellStatus, price: Double, years: Int) {
         configureLabels(sellStatus: sellStatus, price: price, years: years)
     }
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +31,8 @@ class BuyButton: UIButton {
         super.init(coder: aDecoder)
         setupSubviews()
     }
+    
+    // MARK: - Private Methods
     
     private func setupSubviews() {
         addSubview(leftLabel)
@@ -49,15 +57,16 @@ class BuyButton: UIButton {
         ])
     }
     
-    private func configureLabels(sellStatus: SellStatus, price: Double, years: Int) {
-        
+    func configureLabels(sellStatus: SellStatus, price: Double, years: Int) {
         var leftText = ""
+        
         switch sellStatus {
         case .credit:
             leftText = "Кредит"
         case .leasing:
             leftText = "Лизинг"
         }
+        
         let monthlyPayment = Int(price) / (years * 12)
         let rightText = "от \(monthlyPayment) USD/месяц"
         
@@ -86,6 +95,4 @@ class BuyButton: UIButton {
         leftLabel.attributedText = leftString
         rightLabel.attributedText = rightString   
     }
-    
-    
 }

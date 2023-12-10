@@ -9,18 +9,19 @@ import UIKit
 
 protocol IconViewConfigurable: AnyObject {
     func configure(with configuration: IconViewConfiguration)
-    func configureConstraints(position: IconViewPosition, width: CGFloat, height: CGFloat)
-}
-
-enum IconViewPosition {
-    case left, right
+    func configureConstraints(position: Position, width: CGFloat, height: CGFloat)
 }
 
 class IconView: UIView, IconViewConfigurable {
+    
+    // MARK: - UI Elements
+    
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
     
-    init(with configuration: IconViewConfiguration, position: IconViewPosition, width: CGFloat, height: CGFloat) {
+    // MARK: - Initialization
+    
+    init(with configuration: IconViewConfiguration, position: Position, width: CGFloat, height: CGFloat) {
         super.init(frame: .zero)
         configure(with: configuration)
         configureConstraints(position: position, width: width, height: height)
@@ -51,6 +52,39 @@ class IconView: UIView, IconViewConfigurable {
             fontWeight: configuration.fontWeight
         )
     }
+    
+    // MARK: - Public Methods
+    
+    func configureConstraints(position: Position, width: CGFloat, height: CGFloat) {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(titleLabel)
+        addSubview(iconImageView)
+        
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: width),
+            heightAnchor.constraint(equalToConstant: height),
+            
+            iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+        
+        switch position {
+        case .left:
+            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3).isActive = true
+            iconImageView.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -3).isActive = true
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3).isActive = true
+        case .right:
+            
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3).isActive = true
+            titleLabel.trailingAnchor.constraint(equalTo: iconImageView.leadingAnchor, constant: 0).isActive = true
+            titleLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
+            iconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3).isActive = true
+        }
+    }
+    
+    // MARK: - Private Methods
     
     private func setImage(
         systemName: String,
@@ -86,34 +120,5 @@ class IconView: UIView, IconViewConfigurable {
     ) {
         backgroundColor = bgColor
         layer.cornerRadius = cornerRadius
-    }
-    
-    func configureConstraints(position: IconViewPosition, width: CGFloat, height: CGFloat) {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(titleLabel)
-        addSubview(iconImageView)
-        
-        NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: width),
-            heightAnchor.constraint(equalToConstant: height),
-            
-            iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-        ])
-        
-        switch position {
-        case .left:
-            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3).isActive = true
-            iconImageView.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -3).isActive = true
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3).isActive = true
-        case .right:
-            
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3).isActive = true
-            titleLabel.trailingAnchor.constraint(equalTo: iconImageView.leadingAnchor, constant: 0).isActive = true
-            titleLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
-            iconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3).isActive = true
-        }
     }
 }
