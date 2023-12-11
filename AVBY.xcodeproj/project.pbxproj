@@ -9,21 +9,89 @@
 /* Begin PBXBuildFile section */
 		7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */; };
 		7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */; };
-		7BB652012B1E0C39003DB863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652002B1E0C39003DB863 /* ViewController.swift */; };
+		7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652002B1E0C39003DB863 /* SearchViewController.swift */; };
 		7BB652042B1E0C39003DB863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652022B1E0C39003DB863 /* Main.storyboard */; };
 		7BB652062B1E0C3A003DB863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652052B1E0C3A003DB863 /* Assets.xcassets */; };
 		7BB652092B1E0C3A003DB863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB652072B1E0C3A003DB863 /* LaunchScreen.storyboard */; };
+		7BB652372B1E5C1B003DB863 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652362B1E5C1B003DB863 /* TabBarController.swift */; };
+		7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */; };
+		7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */; };
+		7BB652432B1F693C003DB863 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652422B1F693C003DB863 /* Icons.swift */; };
+		7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */; };
+		7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */; };
+		7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652482B1F6B77003DB863 /* DialogViewController.swift */; };
+		7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */; };
+		7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */; };
+		7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */; };
+		7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652762B208512003DB863 /* CatalogBuilder.swift */; };
+		7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652782B208521003DB863 /* CatalogPresenter.swift */; };
+		7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */; };
+		7BB6527D2B2091D6003DB863 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527C2B2091D6003DB863 /* Car.swift */; };
+		7BB6527F2B2091FC003DB863 /* BodyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6527E2B2091FC003DB863 /* BodyType.swift */; };
+		7BB652832B20924B003DB863 /* EngineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652822B20924B003DB863 /* EngineType.swift */; };
+		7BB652852B209304003DB863 /* SellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652842B209304003DB863 /* SellStatus.swift */; };
+		7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652862B2095A8003DB863 /* UIView + Extensions.swift */; };
+		7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */; };
+		7BB6528B2B21E08E003DB863 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6528A2B21E08E003DB863 /* UILabel + Extensions.swift */; };
+		7BB6528E2B21E655003DB863 /* CarImagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */; };
+		7BB652902B2215CD003DB863 /* UINavigationController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6528F2B2215CD003DB863 /* UINavigationController + Extensions.swift */; };
+		7BB652922B22740F003DB863 /* AnnouncementStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652912B22740F003DB863 /* AnnouncementStatus.swift */; };
+		7BB6529C2B23370D003DB863 /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6529B2B23370D003DB863 /* UIImage + Extensions.swift */; };
+		7BB652A32B23418E003DB863 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6529F2B23418E003DB863 /* IconView.swift */; };
+		7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652AF2B234AC8003DB863 /* ImagePosition.swift */; };
+		7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */; };
+		7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */; };
+		7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652B62B24794D003DB863 /* BuyButton.swift */; };
+		7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */; };
+		7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */; };
+		7BB652C32B25EAD8003DB863 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C22B25EAD8003DB863 /* Position.swift */; };
+		7BB652C52B261189003DB863 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C42B261189003DB863 /* IconButton.swift */; };
+		7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C62B261EEA003DB863 /* IconTextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7BB651F92B1E0C39003DB863 /* AVBY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVBY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BB652002B1E0C39003DB863 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BB652002B1E0C39003DB863 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7BB652032B1E0C39003DB863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BB652052B1E0C3A003DB863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BB652082B1E0C3A003DB863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BB6520A2B1E0C3A003DB863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB652362B1E5C1B003DB863 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBuilder.swift; sourceTree = "<group>"; };
+		7BB652422B1F693C003DB863 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		7BB652482B1F6B77003DB863 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		7BB652762B208512003DB863 /* CatalogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBuilder.swift; sourceTree = "<group>"; };
+		7BB652782B208521003DB863 /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		7BB6527C2B2091D6003DB863 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		7BB6527E2B2091FC003DB863 /* BodyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyType.swift; sourceTree = "<group>"; };
+		7BB652822B20924B003DB863 /* EngineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineType.swift; sourceTree = "<group>"; };
+		7BB652842B209304003DB863 /* SellStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStatus.swift; sourceTree = "<group>"; };
+		7BB652862B2095A8003DB863 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
+		7BB6528A2B21E08E003DB863 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImagesCollectionView.swift; sourceTree = "<group>"; };
+		7BB6528F2B2215CD003DB863 /* UINavigationController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652912B22740F003DB863 /* AnnouncementStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementStatus.swift; sourceTree = "<group>"; };
+		7BB6529B2B23370D003DB863 /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
+		7BB6529F2B23418E003DB863 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		7BB652AF2B234AC8003DB863 /* ImagePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePosition.swift; sourceTree = "<group>"; };
+		7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewBuilder.swift; sourceTree = "<group>"; };
+		7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewConfiguration.swift; sourceTree = "<group>"; };
+		7BB652B62B24794D003DB863 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController + Extensions.swift"; sourceTree = "<group>"; };
+		7BB652C22B25EAD8003DB863 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Position.swift; path = ../../../../Position.swift; sourceTree = "<group>"; };
+		7BB652C42B261189003DB863 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		7BB652C62B261EEA003DB863 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +124,209 @@
 		7BB651FB2B1E0C39003DB863 /* AVBY */ = {
 			isa = PBXGroup;
 			children = (
-				7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */,
-				7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */,
-				7BB652002B1E0C39003DB863 /* ViewController.swift */,
+				7BB652812B209211003DB863 /* Common */,
+				7BB652412B1F692B003DB863 /* Models */,
+				7BB6523A2B1E5D06003DB863 /* View Controllers */,
+				7BB652392B1E5CF6003DB863 /* Navigation */,
+				7BB652382B1E5CC2003DB863 /* Resources */,
 				7BB652022B1E0C39003DB863 /* Main.storyboard */,
-				7BB652052B1E0C3A003DB863 /* Assets.xcassets */,
 				7BB652072B1E0C3A003DB863 /* LaunchScreen.storyboard */,
 				7BB6520A2B1E0C3A003DB863 /* Info.plist */,
 			);
 			path = AVBY;
+			sourceTree = "<group>";
+		};
+		7BB652382B1E5CC2003DB863 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */,
+				7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */,
+				7BB652052B1E0C3A003DB863 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7BB652392B1E5CF6003DB863 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652362B1E5C1B003DB863 /* TabBarController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7BB6523A2B1E5D06003DB863 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6523B2B1E5D19003DB863 /* SearchViewController */,
+				7BB6524C2B1F6B95003DB863 /* FavouriteViewController */,
+				7BB6524D2B1F6B9E003DB863 /* AnnouncementViewController */,
+				7BB6524E2B1F6BA9003DB863 /* DialogViewController */,
+				7BB6524F2B1F6BAE003DB863 /* OtherViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7BB6523B2B1E5D19003DB863 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6523C2B1E5D9A003DB863 /* RootViewController */,
+				7BB652552B1FB8B5003DB863 /* CatalogViewController */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		7BB6523C2B1E5D9A003DB863 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652002B1E0C39003DB863 /* SearchViewController.swift */,
+				7BB6523D2B1E5E36003DB863 /* SearchPresenter.swift */,
+				7BB6523F2B1E5E43003DB863 /* SearchBuilder.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		7BB652412B1F692B003DB863 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652422B1F693C003DB863 /* Icons.swift */,
+				7BB6527C2B2091D6003DB863 /* Car.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7BB6524C2B1F6B95003DB863 /* FavouriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652442B1F6B51003DB863 /* FavouriteViewController.swift */,
+			);
+			path = FavouriteViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524D2B1F6B9E003DB863 /* AnnouncementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652462B1F6B63003DB863 /* AnnouncementViewController.swift */,
+			);
+			path = AnnouncementViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524E2B1F6BA9003DB863 /* DialogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652482B1F6B77003DB863 /* DialogViewController.swift */,
+			);
+			path = DialogViewController;
+			sourceTree = "<group>";
+		};
+		7BB6524F2B1F6BAE003DB863 /* OtherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6524A2B1F6B85003DB863 /* OtherViewController.swift */,
+			);
+			path = OtherViewController;
+			sourceTree = "<group>";
+		};
+		7BB652502B1F70CE003DB863 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652512B1F70EA003DB863 /* UIColor + Extensions.swift */,
+				7BB652882B20C05C003DB863 /* UIButton + Extensions.swift */,
+				7BB652862B2095A8003DB863 /* UIView + Extensions.swift */,
+				7BB6528A2B21E08E003DB863 /* UILabel + Extensions.swift */,
+				7BB6529B2B23370D003DB863 /* UIImage + Extensions.swift */,
+				7BB652BF2B24B1BD003DB863 /* UITabBarController + Extensions.swift */,
+				7BB6528F2B2215CD003DB863 /* UINavigationController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BB652552B1FB8B5003DB863 /* CatalogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */,
+				7BB652782B208521003DB863 /* CatalogPresenter.swift */,
+				7BB652762B208512003DB863 /* CatalogBuilder.swift */,
+				7BB6528C2B21E57B003DB863 /* Custom */,
+			);
+			path = CatalogViewController;
+			sourceTree = "<group>";
+		};
+		7BB652802B209209003DB863 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6527E2B2091FC003DB863 /* BodyType.swift */,
+				7BB652822B20924B003DB863 /* EngineType.swift */,
+				7BB652912B22740F003DB863 /* AnnouncementStatus.swift */,
+				7BB652842B209304003DB863 /* SellStatus.swift */,
+				7BB652C22B25EAD8003DB863 /* Position.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7BB652812B209211003DB863 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652802B209209003DB863 /* Enums */,
+				7BB652502B1F70CE003DB863 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7BB6528C2B21E57B003DB863 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652BB2B24913F003DB863 /* CarTableViewCell */,
+				7BB652BC2B249150003DB863 /* CarImagesCollectionView */,
+				7BB652BA2B249128003DB863 /* BuyButton */,
+				7BB652B52B2381A0003DB863 /* IconView */,
+				7BB652AE2B234AA2003DB863 /* Enums */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		7BB652AE2B234AA2003DB863 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652AF2B234AC8003DB863 /* ImagePosition.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7BB652B52B2381A0003DB863 /* IconView */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6529F2B23418E003DB863 /* IconView.swift */,
+				7BB652B32B237EC4003DB863 /* IconViewConfiguration.swift */,
+				7BB652B12B2360A2003DB863 /* IconViewBuilder.swift */,
+			);
+			path = IconView;
+			sourceTree = "<group>";
+		};
+		7BB652BA2B249128003DB863 /* BuyButton */ = {
+			isa = PBXGroup;
+			children = (
+				7BB652B62B24794D003DB863 /* BuyButton.swift */,
+				7BB652C42B261189003DB863 /* IconButton.swift */,
+				7BB652C62B261EEA003DB863 /* IconTextButton.swift */,
+			);
+			path = BuyButton;
+			sourceTree = "<group>";
+		};
+		7BB652BB2B24913F003DB863 /* CarTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6527A2B20919C003DB863 /* CarTableViewCell.swift */,
+			);
+			path = CarTableViewCell;
+			sourceTree = "<group>";
+		};
+		7BB652BC2B249150003DB863 /* CarImagesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6528D2B21E654003DB863 /* CarImagesCollectionView.swift */,
+				7BB652BD2B24917E003DB863 /* CarImagesCollectionViewCell.swift */,
+			);
+			path = CarImagesCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +400,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BB652012B1E0C39003DB863 /* ViewController.swift in Sources */,
+				7BB652C52B261189003DB863 /* IconButton.swift in Sources */,
+				7BB652432B1F693C003DB863 /* Icons.swift in Sources */,
+				7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */,
+				7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */,
+				7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */,
+				7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */,
+				7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */,
+				7BB652372B1E5C1B003DB863 /* TabBarController.swift in Sources */,
+				7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */,
+				7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */,
+				7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */,
+				7BB652832B20924B003DB863 /* EngineType.swift in Sources */,
+				7BB652A32B23418E003DB863 /* IconView.swift in Sources */,
+				7BB652902B2215CD003DB863 /* UINavigationController + Extensions.swift in Sources */,
+				7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */,
+				7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */,
+				7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */,
+				7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */,
+				7BB6528E2B21E655003DB863 /* CarImagesCollectionView.swift in Sources */,
+				7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */,
+				7BB6527F2B2091FC003DB863 /* BodyType.swift in Sources */,
+				7BB652852B209304003DB863 /* SellStatus.swift in Sources */,
+				7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */,
+				7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */,
+				7BB6529C2B23370D003DB863 /* UIImage + Extensions.swift in Sources */,
+				7BB652B72B24794D003DB863 /* BuyButton.swift in Sources */,
 				7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */,
+				7BB6527D2B2091D6003DB863 /* Car.swift in Sources */,
+				7BB652B02B234AC8003DB863 /* ImagePosition.swift in Sources */,
 				7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */,
+				7BB652C32B25EAD8003DB863 /* Position.swift in Sources */,
+				7BB652BE2B24917F003DB863 /* CarImagesCollectionViewCell.swift in Sources */,
+				7BB652522B1F70EA003DB863 /* UIColor + Extensions.swift in Sources */,
+				7BB652922B22740F003DB863 /* AnnouncementStatus.swift in Sources */,
+				7BB6528B2B21E08E003DB863 /* UILabel + Extensions.swift in Sources */,
+				7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */,
+				7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDD6GS4SZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AVBY/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -319,6 +616,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SDD6GS4SZP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AVBY/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
