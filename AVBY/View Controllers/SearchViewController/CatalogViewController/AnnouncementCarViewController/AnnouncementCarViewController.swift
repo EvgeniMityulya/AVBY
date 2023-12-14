@@ -7,10 +7,22 @@
 
 import UIKit
 
+protocol AnnouncementCarViewInput: AnyObject {
+    func configureUI()
+}
+
 final class AnnouncementCarViewController: UIViewController {
 
+    var output: AnnouncementCarViewOutput?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        output?.viewDidLoad()
+    }
+}
+
+extension AnnouncementCarViewController: AnnouncementCarViewInput {
+    func configureUI() {
+        self.view.backgroundColor = .red
     }
 }

@@ -45,7 +45,7 @@ final class CatalogViewController: UIViewController {
 
 extension CatalogViewController: CatalogViewInput {
     func pushViewController(with: Car) {
-        let viewController = AnnouncementViewController()
+        let viewController = AnnouncementCarBuilder.setupModule()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
