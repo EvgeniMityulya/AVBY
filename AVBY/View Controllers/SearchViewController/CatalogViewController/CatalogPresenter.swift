@@ -10,6 +10,7 @@ import Foundation
 protocol CatalogViewOutput {
     func viewDidLoad()
     func viewWillAppear()
+    func didSelectRowAt(car: Car)
 }
 
 final class CatalogPresenter: CatalogViewOutput {
@@ -29,8 +30,7 @@ final class CatalogPresenter: CatalogViewOutput {
         input.configureNavigationBar()
     }
     
-//    func openCatalogButtonTouchUpInside() {
-//        input.pushViewController(withViewController: CatalogViewController())
-//    }
-    
+    func didSelectRowAt(car: Car) {
+        input.pushViewController(with: car)
+    }
 }

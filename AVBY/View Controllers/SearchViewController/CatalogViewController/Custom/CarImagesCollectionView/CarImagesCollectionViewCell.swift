@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CarImagesCollectionViewCell: UICollectionViewCell {
+final class CarImagesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     

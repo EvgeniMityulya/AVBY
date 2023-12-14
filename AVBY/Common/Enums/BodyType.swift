@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum BodyType {
-    case sedan
-    case suv
-    case coupe
-    case universal
+enum BodyType: String {
+    case sedan = "седан"
+    case suv = "SUV"
+    case coupe = "купе"
+    case universal = "универсал"
 }

@@ -11,9 +11,10 @@ protocol CatalogViewInput: AnyObject {
     func configureUI()
     func configureConstraints()
     func configureNavigationBar()
+    func pushViewController(with: Car)
 }
 
-class CatalogViewController: UIViewController {
+final class CatalogViewController: UIViewController {
     
     var output: CatalogViewOutput?
     var previousContentOffsetY: CGFloat = 0
@@ -43,6 +44,12 @@ class CatalogViewController: UIViewController {
 }
 
 extension CatalogViewController: CatalogViewInput {
+    func pushViewController(with: Car) {
+        let viewController = AnnouncementViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
     func configureNavigationBar() {
         self.navigationController?.setupBackButton(title: "")
         self.navigationController?.setupMavigationBar(backgroundColor: .tabBarColor, titleColor: .titleColor, title: "\(cars.count) объявлений", sender: self)
@@ -54,7 +61,6 @@ extension CatalogViewController: CatalogViewInput {
         view.backgroundColor = .backgroundViewControllerColor
         
         catalogTableView.showsVerticalScrollIndicator = false
-        catalogTableView.allowsSelection = false
         catalogTableView.backgroundColor = .clear
         catalogTableView.separatorStyle = .none
         catalogTableView.contentInset =  UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
@@ -70,8 +76,10 @@ extension CatalogViewController: CatalogViewInput {
     }
     
     func configureConstraints() {
-        view.addSubview(catalogTableView)
-        view.addSubview(bottomStackView)
+        view.addSubview(
+            catalogTableView,
+            bottomStackView
+        )
         
         firstBottomButton.translatesAutoresizingMaskIntoConstraints = false
         secondBottomButton.translatesAutoresizingMaskIntoConstraints = false
@@ -91,12 +99,6 @@ extension CatalogViewController: CatalogViewInput {
             bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
-//            someView.leadingAnchor.constraint(equalTo: bottomStackView.leadingAnchor, constant: 0),
-//            someView.topAnchor.constraint(equalTo: bottomStackView.topAnchor, constant: 0),
-//            someView.bottomAnchor.constraint(equalTo: bottomStackView.bottomAnchor, constant: 0),
-//            someView.widthAnchor.constraint(equalToConstant: 40),
-//            someView.heightAnchor.constraint(equalToConstant: 45),
-            
             firstBottomButton.widthAnchor.constraint(equalToConstant: 60),
             firstBottomButton.heightAnchor.constraint(equalToConstant: 45),
             
@@ -106,12 +108,10 @@ extension CatalogViewController: CatalogViewInput {
     }
     
     @objc private func firstBottomButtonTapped() {
-        // Обработка нажатия на первую кнопку
         print("First Bottom Button Tapped")
     }
     
     @objc private func secondBottomButtonTapped() {
-        // Обработка нажатия на вторую кнопку
         print("Second Bottom Button Tapped")
     }
 }
@@ -125,10 +125,8 @@ extension CatalogViewController: UIScrollViewDelegate {
         
         if abs(deltaY) > hideThreshold {
             if deltaY > 0 {
-                // Скролл вниз
                 hideBottomButtons()
             } else if deltaY < 0 {
-                // Скролл вверх
                 showBottomButtons()
             }
             
@@ -164,7 +162,12 @@ extension CatalogViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as? CarTableViewCell else { return UITableViewCell() }
         let car = cars[indexPath.row]
+        cell.selectionStyle = .none
         cell.configure(car: car, indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output?.didSelectRowAt(car: cars[indexPath.row])
     }
 }

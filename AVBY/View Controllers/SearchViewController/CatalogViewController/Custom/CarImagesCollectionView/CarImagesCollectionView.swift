@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CarImagesCollectionView: UICollectionView {
+final class CarImagesCollectionView: UICollectionView {
     
     // MARK: - Properties
     

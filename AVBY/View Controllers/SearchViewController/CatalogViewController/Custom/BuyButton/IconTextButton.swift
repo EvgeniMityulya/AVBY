@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IconTextButton: UIButton {
+final class IconTextButton: UIButton {
     
     init(iconName: String, title: String) {
         super.init(frame: .zero)

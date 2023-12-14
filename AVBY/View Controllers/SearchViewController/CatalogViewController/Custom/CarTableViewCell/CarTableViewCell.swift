@@ -61,7 +61,7 @@ final class CarTableViewCell: UITableViewCell {
         configurePriceLabel(rubles: car.priceRubles, dollars: car.priceDollars)
         configureAnnouncementDetailsLabel(city: car.city, date: car.date)
         configureAboutLabel(car: car)
-        buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5)
+        buyButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5, currency: "USD")
         carImagesCollectionView.setupCollectionView(car: car)
     }
     
@@ -296,30 +296,8 @@ final class CarTableViewCell: UITableViewCell {
     
     private func configureAboutLabel(car: Car) {
         var resultStr = ""
-        var engine = ""
-        var type = ""
-        
-        switch car.engineType {
-        case .gasoline:
-            engine = "бензин"
-        case .diesel:
-            engine = "дизель"
-        case .electric:
-            engine = "электромобиль"
-        case .hybrid:
-            engine = "гибрид"
-        }
-        
-        switch car.bodyType {
-        case .sedan:
-            type = "седан"
-        case .suv:
-            type = "SUV"
-        case .coupe:
-            type = "купе"
-        case .universal:
-            type = "универсал"
-        }
+        let engine = car.engineType.rawValue
+        let type = car.bodyType.rawValue
         
         resultStr = "\(car.releaseYear) г., \(car.capacity) л, \(engine), \(type), \(car.milieage) км"
         carAboutLabel.text = resultStr

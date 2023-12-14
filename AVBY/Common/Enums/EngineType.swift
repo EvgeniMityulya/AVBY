@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum EngineType {
-    case gasoline
-    case diesel
-    case electric
-    case hybrid
+enum EngineType: String {
+    case gasoline = "бензин"
+    case diesel = "дизель"
+    case electric = "электромобиль"
+    case hybrid = "гибрид"
 }

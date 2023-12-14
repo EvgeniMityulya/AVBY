@@ -12,7 +12,7 @@ protocol IconViewConfigurable: AnyObject {
     func configureConstraints(position: Position, width: CGFloat, height: CGFloat)
 }
 
-class IconView: UIView, IconViewConfigurable {
+final class IconView: UIView, IconViewConfigurable {
     
     // MARK: - UI Elements
     
@@ -59,8 +59,10 @@ class IconView: UIView, IconViewConfigurable {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(titleLabel)
-        addSubview(iconImageView)
+        addSubview(
+            titleLabel,
+            iconImageView
+        )
         
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: width),
