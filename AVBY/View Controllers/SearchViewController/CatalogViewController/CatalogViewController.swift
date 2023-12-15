@@ -44,11 +44,10 @@ final class CatalogViewController: UIViewController {
 }
 
 extension CatalogViewController: CatalogViewInput {
-    func pushViewController(with: Car) {
-        let viewController = AnnouncementCarBuilder.setupModule()
+    func pushViewController(with car: Car) {
+        let viewController = CarDetailsBuilder.setupModule(car: car)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
     func configureNavigationBar() {
         self.navigationController?.setupBackButton(title: "")

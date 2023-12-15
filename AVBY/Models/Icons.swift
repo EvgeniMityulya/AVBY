@@ -20,6 +20,6 @@ struct Icons {
     static let arrowUpDown = "arrow.up.arrow.down"
     static let sparkleMagnifyingglass = "sparkle.magnifyingglass"
     static let gearshape = "gearshape.2"
-    
+    static let ellipsis = "ellipsis"
 }
 

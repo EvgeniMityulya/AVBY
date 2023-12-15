@@ -46,9 +46,9 @@
 		7BB652C32B25EAD8003DB863 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C22B25EAD8003DB863 /* Position.swift */; };
 		7BB652C52B261189003DB863 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C42B261189003DB863 /* IconButton.swift */; };
 		7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652C62B261EEA003DB863 /* IconTextButton.swift */; };
-		7BB652EA2B29B119003DB863 /* AnnouncementCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652E92B29B119003DB863 /* AnnouncementCarViewController.swift */; };
-		7BB652EC2B2BAC01003DB863 /* AnnouncementCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652EB2B2BAC01003DB863 /* AnnouncementCarPresenter.swift */; };
-		7BB652EE2B2BB002003DB863 /* AnnouncementCarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652ED2B2BB002003DB863 /* AnnouncementCarBuilder.swift */; };
+		7BB652EA2B29B119003DB863 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652E92B29B119003DB863 /* CarDetailsViewController.swift */; };
+		7BB652EC2B2BAC01003DB863 /* CarDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652EB2B2BAC01003DB863 /* CarDetailsPresenter.swift */; };
+		7BB652EE2B2BB002003DB863 /* CarDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652ED2B2BB002003DB863 /* CarDetailsBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,9 +93,9 @@
 		7BB652C22B25EAD8003DB863 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Position.swift; path = ../../../../Position.swift; sourceTree = "<group>"; };
 		7BB652C42B261189003DB863 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		7BB652C62B261EEA003DB863 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
-		7BB652E92B29B119003DB863 /* AnnouncementCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCarViewController.swift; sourceTree = "<group>"; };
-		7BB652EB2B2BAC01003DB863 /* AnnouncementCarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCarPresenter.swift; sourceTree = "<group>"; };
-		7BB652ED2B2BB002003DB863 /* AnnouncementCarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCarBuilder.swift; sourceTree = "<group>"; };
+		7BB652E92B29B119003DB863 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
+		7BB652EB2B2BAC01003DB863 /* CarDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPresenter.swift; sourceTree = "<group>"; };
+		7BB652ED2B2BB002003DB863 /* CarDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +250,7 @@
 				7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */,
 				7BB652782B208521003DB863 /* CatalogPresenter.swift */,
 				7BB652762B208512003DB863 /* CatalogBuilder.swift */,
-				7BB652E82B29B0EE003DB863 /* AnnouncementCarViewController */,
+				7BB652E82B29B0EE003DB863 /* CarDetailsViewController */,
 				7BB6528C2B21E57B003DB863 /* Custom */,
 			);
 			path = CatalogViewController;
@@ -325,14 +325,22 @@
 			path = CarImagesCollectionView;
 			sourceTree = "<group>";
 		};
-		7BB652E82B29B0EE003DB863 /* AnnouncementCarViewController */ = {
+		7BB652E82B29B0EE003DB863 /* CarDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7BB652E92B29B119003DB863 /* AnnouncementCarViewController.swift */,
-				7BB652EB2B2BAC01003DB863 /* AnnouncementCarPresenter.swift */,
-				7BB652ED2B2BB002003DB863 /* AnnouncementCarBuilder.swift */,
+				7BB652E92B29B119003DB863 /* CarDetailsViewController.swift */,
+				7BB652EB2B2BAC01003DB863 /* CarDetailsPresenter.swift */,
+				7BB652ED2B2BB002003DB863 /* CarDetailsBuilder.swift */,
+				7BB652EF2B2CEB11003DB863 /* Custom */,
 			);
-			path = AnnouncementCarViewController;
+			path = CarDetailsViewController;
+			sourceTree = "<group>";
+		};
+		7BB652EF2B2CEB11003DB863 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,7 +418,7 @@
 				7BB652432B1F693C003DB863 /* Icons.swift in Sources */,
 				7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */,
 				7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */,
-				7BB652EA2B29B119003DB863 /* AnnouncementCarViewController.swift in Sources */,
+				7BB652EA2B29B119003DB863 /* CarDetailsViewController.swift in Sources */,
 				7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */,
 				7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */,
 				7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */,
@@ -418,7 +426,7 @@
 				7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */,
 				7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */,
 				7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */,
-				7BB652EE2B2BB002003DB863 /* AnnouncementCarBuilder.swift in Sources */,
+				7BB652EE2B2BB002003DB863 /* CarDetailsBuilder.swift in Sources */,
 				7BB652832B20924B003DB863 /* EngineType.swift in Sources */,
 				7BB652A32B23418E003DB863 /* IconView.swift in Sources */,
 				7BB652902B2215CD003DB863 /* UINavigationController + Extensions.swift in Sources */,
@@ -444,7 +452,7 @@
 				7BB6528B2B21E08E003DB863 /* UILabel + Extensions.swift in Sources */,
 				7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */,
 				7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */,
-				7BB652EC2B2BAC01003DB863 /* AnnouncementCarPresenter.swift in Sources */,
+				7BB652EC2B2BAC01003DB863 /* CarDetailsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
