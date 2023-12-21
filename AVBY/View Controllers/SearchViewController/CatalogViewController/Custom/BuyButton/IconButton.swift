@@ -9,26 +9,52 @@ import UIKit
 
 final class IconButton: UIButton {
     
-    init(iconName: String) {
+    var buttonTintColor: UIColor = .white {
+        didSet {
+            tintColor = buttonTintColor
+        }
+    }
+    
+    var buttonBackgroundColor: UIColor = .bottomButtonColor {
+        didSet {
+            backgroundColor = buttonBackgroundColor
+        }
+    }
+    
+    var cornerRadius: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    
+    init(iconName: String, iconSize: CGFloat, tintColor: UIColor = .white, backgroundColor: UIColor = .bottomButtonColor, cornerRadius: CGFloat = 10) {
         super.init(frame: .zero)
-        setup(iconName: iconName)
+        self.buttonTintColor = tintColor
+        self.buttonBackgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
+        
+        setup(iconName: iconName, iconSize: iconSize)
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup(iconName: String) {
-        let configuration = UIImage.SymbolConfiguration(pointSize: 16, weight: .medium)
+    
+    
+    private func setup(iconName: String, iconSize: CGFloat) {
+        let configuration = UIImage.SymbolConfiguration(pointSize: iconSize, weight: .medium)
         let image = UIImage(systemName: iconName, withConfiguration: configuration)
         
         var buttonConfig = UIButton.Configuration.plain()
         buttonConfig.image = image
         buttonConfig.baseBackgroundColor = .white
         buttonConfig.imagePadding = 10
-        tintColor = .white
-        backgroundColor = .bottomButtonColor
-        layer.cornerRadius = 10
+        
+        tintColor = buttonTintColor
+        backgroundColor = buttonBackgroundColor
+        layer.cornerRadius = cornerRadius
         
         self.configuration = buttonConfig
         

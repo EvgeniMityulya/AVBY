@@ -46,13 +46,14 @@ extension CarDetailsViewController: CarDetailsViewInput {
     
     func configureUI() {
         self.view.backgroundColor = .white
+        detailsTableView.separatorStyle = .none
         detailsTableView.backgroundColor = .red
-        detailsTableView.register(CarTableViewCell.self, forCellReuseIdentifier: "CarCell")
+        detailsTableView.register(CarDetailsTableViewCell.self, forCellReuseIdentifier: "CarDetailsCell")
     }
     
     func configureNavigationBar() {
         self.navigationController?.setupBackButton(title: "")
-        self.navigationController?.setupMavigationBar(backgroundColor: .white, titleColor: .titleColor, title: "", sender: self)
+        self.navigationController?.setupMavigationBar(backgroundColor: .cellColor, titleColor: .titleColor, title: "", sender: self)
         self.navigationController?.setupBarButtonItem(imageName: Icons.ellipsis, tintColor: .barIconActiveColor, target: self, action: #selector(moreButtonTapped), position: .right)
         self.tabBarController?.setupTabBar(backgroundColor: .tabBarColor, unselectedItemTintColor: .barIconUnactiveColor, selectedItemTintColor: .barIconActiveColor)
     }
@@ -77,14 +78,14 @@ extension CarDetailsViewController: CarDetailsViewInput {
 
 extension CarDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as? CarTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailsCell", for: indexPath) as? CarDetailsTableViewCell else { return UITableViewCell() }
         cell.selectionStyle = .none
         guard let car = self.car else { return UITableViewCell() }
-        cell.configure(car: car, indexPath: indexPath)
+        cell.configure(car: car)
         return cell
     }
 }

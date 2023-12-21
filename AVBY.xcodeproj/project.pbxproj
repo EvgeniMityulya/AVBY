@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7153092B2E052D0056B305 /* CarDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7153082B2E052D0056B305 /* CarDetailsSection.swift */; };
+		7B71530B2B2E4F650056B305 /* CarDetailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */; };
+		7B71530D2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */; };
+		7B7153102B30A9E10056B305 /* BuyImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71530F2B30A9E10056B305 /* BuyImageButton.swift */; };
+		7B7153352B30CB820056B305 /* TopImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7153342B30CB820056B305 /* TopImageButton.swift */; };
 		7BB651FD2B1E0C39003DB863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */; };
 		7BB651FF2B1E0C39003DB863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */; };
 		7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652002B1E0C39003DB863 /* SearchViewController.swift */; };
@@ -49,9 +54,15 @@
 		7BB652EA2B29B119003DB863 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652E92B29B119003DB863 /* CarDetailsViewController.swift */; };
 		7BB652EC2B2BAC01003DB863 /* CarDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652EB2B2BAC01003DB863 /* CarDetailsPresenter.swift */; };
 		7BB652EE2B2BB002003DB863 /* CarDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652ED2B2BB002003DB863 /* CarDetailsBuilder.swift */; };
+		7BB652F22B2CEE54003DB863 /* CarDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB652F12B2CEE54003DB863 /* CarDetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B7153082B2E052D0056B305 /* CarDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsSection.swift; sourceTree = "<group>"; };
+		7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCollectionView.swift; sourceTree = "<group>"; };
+		7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B71530F2B30A9E10056B305 /* BuyImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyImageButton.swift; sourceTree = "<group>"; };
+		7B7153342B30CB820056B305 /* TopImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageButton.swift; sourceTree = "<group>"; };
 		7BB651F92B1E0C39003DB863 /* AVBY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVBY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB651FC2B1E0C39003DB863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB651FE2B1E0C39003DB863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +107,7 @@
 		7BB652E92B29B119003DB863 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		7BB652EB2B2BAC01003DB863 /* CarDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsPresenter.swift; sourceTree = "<group>"; };
 		7BB652ED2B2BB002003DB863 /* CarDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsBuilder.swift; sourceTree = "<group>"; };
+		7BB652F12B2CEE54003DB863 /* CarDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +262,8 @@
 				7BB652532B1FB8B2003DB863 /* CatalogViewController.swift */,
 				7BB652782B208521003DB863 /* CatalogPresenter.swift */,
 				7BB652762B208512003DB863 /* CatalogBuilder.swift */,
-				7BB652E82B29B0EE003DB863 /* CarDetailsViewController */,
 				7BB6528C2B21E57B003DB863 /* Custom */,
+				7BB652E82B29B0EE003DB863 /* CarDetailsViewController */,
 			);
 			path = CatalogViewController;
 			sourceTree = "<group>";
@@ -264,6 +276,7 @@
 				7BB652912B22740F003DB863 /* AnnouncementStatus.swift */,
 				7BB652842B209304003DB863 /* SellStatus.swift */,
 				7BB652C22B25EAD8003DB863 /* Position.swift */,
+				7B7153082B2E052D0056B305 /* CarDetailsSection.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -339,6 +352,11 @@
 		7BB652EF2B2CEB11003DB863 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				7BB652F12B2CEE54003DB863 /* CarDetailsTableViewCell.swift */,
+				7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */,
+				7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */,
+				7B71530F2B30A9E10056B305 /* BuyImageButton.swift */,
+				7B7153342B30CB820056B305 /* TopImageButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -419,13 +437,17 @@
 				7BB6524B2B1F6B85003DB863 /* OtherViewController.swift in Sources */,
 				7BB652542B1FB8B2003DB863 /* CatalogViewController.swift in Sources */,
 				7BB652EA2B29B119003DB863 /* CarDetailsViewController.swift in Sources */,
+				7B7153092B2E052D0056B305 /* CarDetailsSection.swift in Sources */,
+				7B7153352B30CB820056B305 /* TopImageButton.swift in Sources */,
 				7BB652012B1E0C39003DB863 /* SearchViewController.swift in Sources */,
 				7BB652492B1F6B77003DB863 /* DialogViewController.swift in Sources */,
+				7BB652F22B2CEE54003DB863 /* CarDetailsTableViewCell.swift in Sources */,
 				7BB652772B208512003DB863 /* CatalogBuilder.swift in Sources */,
 				7BB652372B1E5C1B003DB863 /* TabBarController.swift in Sources */,
 				7BB652872B2095A8003DB863 /* UIView + Extensions.swift in Sources */,
 				7BB6523E2B1E5E36003DB863 /* SearchPresenter.swift in Sources */,
 				7BB652B42B237EC4003DB863 /* IconViewConfiguration.swift in Sources */,
+				7B7153102B30A9E10056B305 /* BuyImageButton.swift in Sources */,
 				7BB652EE2B2BB002003DB863 /* CarDetailsBuilder.swift in Sources */,
 				7BB652832B20924B003DB863 /* EngineType.swift in Sources */,
 				7BB652A32B23418E003DB863 /* IconView.swift in Sources */,
@@ -433,10 +455,12 @@
 				7BB652C02B24B1BD003DB863 /* UITabBarController + Extensions.swift in Sources */,
 				7BB652792B208521003DB863 /* CatalogPresenter.swift in Sources */,
 				7BB652C72B261EEA003DB863 /* IconTextButton.swift in Sources */,
+				7B71530B2B2E4F650056B305 /* CarDetailsCollectionView.swift in Sources */,
 				7BB652B22B2360A2003DB863 /* IconViewBuilder.swift in Sources */,
 				7BB6528E2B21E655003DB863 /* CarImagesCollectionView.swift in Sources */,
 				7BB652892B20C05C003DB863 /* UIButton + Extensions.swift in Sources */,
 				7BB6527F2B2091FC003DB863 /* BodyType.swift in Sources */,
+				7B71530D2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift in Sources */,
 				7BB652852B209304003DB863 /* SellStatus.swift in Sources */,
 				7BB652452B1F6B51003DB863 /* FavouriteViewController.swift in Sources */,
 				7BB6527B2B20919C003DB863 /* CarTableViewCell.swift in Sources */,
@@ -617,7 +641,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iseedeadpeople.AVBY;
+				PRODUCT_BUNDLE_IDENTIFIER = iseedeadpeople.AVby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -645,7 +669,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iseedeadpeople.AVBY;
+				PRODUCT_BUNDLE_IDENTIFIER = iseedeadpeople.AVby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

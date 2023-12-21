@@ -24,7 +24,7 @@ final class CatalogViewController: UIViewController {
     private let catalogTableView = UITableView(frame: .zero, style: .plain)
     
     private let bottomStackView = UIStackView()
-    private let firstBottomButton = IconButton(iconName: Icons.sparkleMagnifyingglass)
+    private let firstBottomButton = IconButton(iconName: Icons.sparkleMagnifyingglass, iconSize: 16)
     private let secondBottomButton = IconTextButton(iconName: Icons.gearshape, title: "Параметры")
     
     override func viewDidLoad() {

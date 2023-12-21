@@ -21,5 +21,6 @@ struct Icons {
     static let sparkleMagnifyingglass = "sparkle.magnifyingglass"
     static let gearshape = "gearshape.2"
     static let ellipsis = "ellipsis"
+    static let chevronDown = "chevron.down"
 }
 
