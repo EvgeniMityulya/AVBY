@@ -67,4 +67,8 @@ extension UIColor {
     static var buttonDownTintColor: UIColor {
         return UIColor(named: "buttonDownTint") ?? .black
     }
+    
+    static var detailsBlueColor: UIColor {
+        return UIColor(named: "detailsBlue") ?? .black
+    }
 }

@@ -78,15 +78,9 @@ extension CarDetailsCollectionView: UICollectionViewDelegate, UICollectionViewDa
 extension CarDetailsCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let carImageName = car?.imageName[indexPath.item],
-              let image = UIImage(named: carImageName),
+              let _ = UIImage(named: carImageName),
               let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
-            if let placeholderImage = UIImage(named: "noImage") {
-                let height: CGFloat = collectionView.frame.height
-                let width = collectionView.frame.width
-                return CGSize(width: width, height: height)
-            } else {
-                return CGSize(width: 100, height: 100)
-            }
+            return CGSize(width: max(collectionView.frame.width - 10, 0), height: 240)
         }
         let height: CGFloat = collectionView.frame.height - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom
         let width = collectionView.frame.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right

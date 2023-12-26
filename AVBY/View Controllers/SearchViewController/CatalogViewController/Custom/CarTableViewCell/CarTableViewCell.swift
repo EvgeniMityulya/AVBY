@@ -86,7 +86,7 @@ final class CarTableViewCell: UITableViewCell {
         // Labels
         carNameLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .medium)
         carAboutLabel.applyTextStyle(textColor: .titleColor, fontSize: 16, weight: .regular)
-        announcementDetailsLabel.applyTextStyle(textColor: .subtitle, fontSize: 14, weight: .regular)
+        announcementDetailsLabel.applyTextStyle(textColor: .subtitleColor, fontSize: 14, weight: .regular)
         carNameLabel.numberOfLines = 0
         carPriceLabel.numberOfLines = 0
         carAboutLabel.numberOfLines = 0
@@ -215,13 +215,6 @@ final class CarTableViewCell: UITableViewCell {
             .setWidth(50)
             .setHeight(20)
             .build()
-        
-        //        let topView1 = IconViewBuilder()
-        //            .setConfiguration(topViewConfiguration)
-        //            .setPosition(.left)
-        //            .setWidth(50)
-        //            .setHeight(20)
-        //            .build()
         
         let vinViewConfiguration = IconViewConfiguration(
             systemName: Icons.checkmark,

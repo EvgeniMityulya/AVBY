@@ -24,6 +24,7 @@ final class CarDetailsPresenter: CarDetailsViewOutput {
     func viewDidLoad() {
         input.configureUI()
         input.configureConstraints()
+        input.makeSections()
     }
     
     func setupModel(car: Car) {

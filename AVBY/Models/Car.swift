@@ -19,11 +19,14 @@ struct Car {
     let bodyType: BodyType
     let engineType: EngineType
     let imageName: [String]
+    let equipment: [Equipment]
+    let trade: Bool
     let announcementStatus: [AnnouncementStatus]
     let city: String
     let date: String
     let sellStatus: SellStatus
     let about: String
+   
     
     
     static let cars: [Car] = [
@@ -35,6 +38,8 @@ struct Car {
             bodyType: .coupe,
             engineType: .diesel,
             imageName: ["nissan1", "nissan2", "nissan3"],
+            equipment: [.trunk, .freeLight],
+            trade: true,
             announcementStatus: [.top],
             city: "Минск",
             date: "31 декабря",
@@ -55,6 +60,8 @@ struct Car {
             bodyType: .sedan,
             engineType: .gasoline,
             imageName: ["toyota1", "toyota2", "toyota3"],
+            equipment: [.abs, .freeLight],
+            trade: true,
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",
@@ -69,6 +76,8 @@ struct Car {
             bodyType: .suv,
             engineType: .hybrid,
             imageName: ["honda1", "honda2", "honda3"],
+            equipment: [.trunk, .abs],
+            trade: false,
             announcementStatus: [],
             city: "Минск",
             date: "31 декабря",
@@ -83,6 +92,8 @@ struct Car {
             bodyType: .coupe,
             engineType: .gasoline,
             imageName: ["audi1", "audi2", "audi3"],
+            equipment: [.heatedGrips, .freeLight],
+            trade: true,
             announcementStatus: [.top],
             city: "Минск",
             date: "31 декабря",
@@ -97,6 +108,8 @@ struct Car {
             bodyType: .sedan,
             engineType: .electric,
             imageName: ["tesla1", "tesla2", "tesla3"],
+            equipment: [.heatedGrips, .freeLight],
+            trade: false,
             announcementStatus: [.vin],
             city: "Минск",
             date: "31 декабря",
@@ -111,6 +124,8 @@ struct Car {
             bodyType: .sedan,
             engineType: .gasoline,
             imageName: ["bmw1", "bmw2", "bmw3"],
+            equipment: [.abs, .freeLight],
+            trade: true,
             announcementStatus: [.top],
             city: "Минск",
             date: "31 декабря",
@@ -125,6 +140,8 @@ struct Car {
             bodyType: .suv,
             engineType: .diesel,
             imageName: ["mercedes1", "mercedes2", "mercedes3"],
+            equipment: [.trunk, .freeLight],
+            trade: false,
             announcementStatus: [],
             city: "Минск",
             date: "31 декабря",
@@ -139,6 +156,8 @@ struct Car {
             bodyType: .coupe,
             engineType: .gasoline,
             imageName: ["chevrolet1", "chevrolet2", "chevrolet3"],
+            equipment: [.trunk, .freeLight],
+            trade: true,
             announcementStatus: [.top, .vin],
             city: "Минск",
             date: "31 декабря",
@@ -153,6 +172,8 @@ struct Car {
             bodyType: .sedan,
             engineType: .gasoline,
             imageName: ["volkswagen1", "volkswagen2", "volkswagen3"],
+            equipment: [.abs, .heatedGrips],
+            trade: true,
             announcementStatus: [],
             city: "Минск",
             date: "31 декабря",
@@ -167,6 +188,8 @@ struct Car {
             bodyType: .sedan,
             engineType: .gasoline,
             imageName: ["subaru1", "subaru2", "subaru3"],
+            equipment: [.abs, .trunk, .freeLight],
+            trade: false,
             announcementStatus: [],
             city: "Минск",
             date: "31 декабря",

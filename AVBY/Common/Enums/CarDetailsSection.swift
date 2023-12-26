@@ -9,5 +9,5 @@ import Foundation
 
 enum CarDetailsSection {
     case mainInfo
-    case description
+    case description(CarOptions)
 }

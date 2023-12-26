@@ -12,13 +12,15 @@ protocol CarDetailsViewInput: AnyObject {
     func configureConstraints()
     func configureNavigationBar()
     func setData(car: Car)
+    func makeSections()
 }
 
 final class CarDetailsViewController: UIViewController {
-
+    
     var output: CarDetailsViewOutput?
     
     private var car: Car?
+    private var sections = [CarDetailsSection]()
     
     private let detailsTableView = UITableView(frame: .zero, style: .plain)
     
@@ -40,15 +42,32 @@ final class CarDetailsViewController: UIViewController {
 }
 
 extension CarDetailsViewController: CarDetailsViewInput {
+    func makeSections() {
+        guard let car = self.car else { return }
+        let tradeStatus = car.trade == true ? "" : "не "
+        
+        let mainInfoSection: CarDetailsSection = .mainInfo
+        let detailsSection: CarDetailsSection = .description(CarOptions(title: "Описание", options: [car.about]))
+        let optionsSection: CarDetailsSection = .description(CarOptions(title: "Комплектация", options: car.equipment.map { $0.rawValue  }))
+        let exhangeSection: CarDetailsSection = .description(CarOptions(title: "Обмен \(tradeStatus)интересует", options: ["Продавца \(tradeStatus)интересует обмен"]))
+        
+        sections = [mainInfoSection, detailsSection, optionsSection, exhangeSection]
+        
+        DispatchQueue.main.async {
+            self.detailsTableView.reloadData()
+        }
+    }
+    
     func setData(car: Car) {
         self.car = car
     }
     
     func configureUI() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .backgroundViewControllerColor
         detailsTableView.separatorStyle = .none
-        detailsTableView.backgroundColor = .red
-        detailsTableView.register(CarDetailsTableViewCell.self, forCellReuseIdentifier: "CarDetailsCell")
+        detailsTableView.backgroundColor = .buttonColor
+        detailsTableView.register(CarDetailsMainTableViewCell.self, forCellReuseIdentifier: "CarDetailsMainCell")
+        detailsTableView.register(CarDetailsCommonTableViewCell.self, forCellReuseIdentifier: "CarDetailsCommonCell")
     }
     
     func configureNavigationBar() {
@@ -78,14 +97,24 @@ extension CarDetailsViewController: CarDetailsViewInput {
 
 extension CarDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        sections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailsCell", for: indexPath) as? CarDetailsTableViewCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
-        guard let car = self.car else { return UITableViewCell() }
-        cell.configure(car: car)
-        return cell
+        let currentSection = sections[indexPath.row]
+        switch currentSection {
+        case .mainInfo:
+            if let car = car, let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailsMainCell", for: indexPath) as? CarDetailsMainTableViewCell {
+                cell.configure(car: car)
+                return cell
+            }
+        case .description(let carOptions):
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailsCommonCell", for: indexPath) as? CarDetailsCommonTableViewCell {
+                cell.configure(title: carOptions.title, options: carOptions.options)
+                return cell
+            }
+        }
+        
+        return UITableViewCell()
     }
 }

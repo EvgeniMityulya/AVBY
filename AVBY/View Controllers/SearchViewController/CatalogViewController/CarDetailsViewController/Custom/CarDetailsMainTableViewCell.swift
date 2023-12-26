@@ -1,5 +1,5 @@
 //
-//  CarDetailsTableViewCell.swift
+//  CarDetailsMainTableViewCell.swift
 //  AVBY
 //
 //  Created by Евгений Митюля on 12/15/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CarDetailsTableViewCell: UITableViewCell {
+final class CarDetailsMainTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
@@ -24,7 +24,16 @@ final class CarDetailsTableViewCell: UITableViewCell {
     private let carImagesCollectionView = CarDetailsCollectionView()
     private let sellStatusButton = BuyImageButton()
     private let actionsStackView = UIStackView()
+    private let separatorView = UIView()
+    private let carAboutLabel = UILabel()
     
+    private let shareButton = ImageTextButton(imageName: Icons.squareArrowUp, text: "Поделиться")
+    private let commentButton = ImageTextButton(imageName: Icons.plusSquare, text: "Комментарий")
+    private let favouriteButton = ImageTextButton(imageName: Icons.bookmark, text: "В закладки")
+    
+    private let announcementStatusStackView = UIStackView()
+    private let cityLabel = UILabel()
+    private let dateLabel = UILabel()
     
     // MARK: - Lifecycle Methods
     
@@ -49,7 +58,11 @@ final class CarDetailsTableViewCell: UITableViewCell {
     func configure(car: Car) {
         self.car = car
         carNameLabel.text = car.name
+        cityLabel.text = car.city
+        dateLabel.text = "Опубликовано " + car.date
         configurePriceLabel(rubles: car.priceRubles, dollars: car.priceDollars)
+        configureAboutLabel(car: car)
+        configureStatusStackView(status: car.announcementStatus)
         carImagesCollectionView.setupCollectionView(car: car)
         sellStatusButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5, currency: "USD")
     }
@@ -57,13 +70,33 @@ final class CarDetailsTableViewCell: UITableViewCell {
     private func setupStyles() {
         overlayView.backgroundColor = .cellColor
         carNameLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .medium)
+        carAboutLabel.applyTextStyle(textColor: .titleColor, fontSize: 16, weight: .regular)
+        cityLabel.applyTextStyle(textColor: .subtitleColor, fontSize: 15, weight: .regular)
+        dateLabel.applyTextStyle(textColor: .subtitleColor, fontSize: 15, weight: .regular)
         
         carNameLabel.numberOfLines = 0
         carPriceRublesLabel.numberOfLines = 0
+        carAboutLabel.numberOfLines = 0
+        cityLabel.numberOfLines = 0
+        dateLabel.numberOfLines = 0
+        
+        actionsStackView.backgroundColor = .clear
+        actionsStackView.axis = .horizontal
+        actionsStackView.distribution = .fillEqually
+        actionsStackView.alignment = .center
+        actionsStackView.spacing = 25
+        
+        announcementStatusStackView.backgroundColor = .clear
+        announcementStatusStackView.axis = .horizontal
+        announcementStatusStackView.distribution = .fill
+        announcementStatusStackView.alignment = .leading
+        announcementStatusStackView.spacing = 5
         
         checkPriceButton.buttonBackgroundColor = .buttonColor
         checkPriceButton.buttonTintColor = .buttonDownTintColor
         checkPriceButton.cornerRadius = 8
+        
+        separatorView.backgroundColor = .separatorColor
     }
     
     private func configureConstraints() {
@@ -75,8 +108,17 @@ final class CarDetailsTableViewCell: UITableViewCell {
         carImagesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         sellStatusButton.translatesAutoresizingMaskIntoConstraints = false
         actionsStackView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        carAboutLabel.translatesAutoresizingMaskIntoConstraints = false
+        announcementStatusStackView.translatesAutoresizingMaskIntoConstraints = false
+        cityLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(overlayView)
+        
+        actionsStackView.addArrangedSubview(shareButton)
+        actionsStackView.addArrangedSubview(commentButton)
+        actionsStackView.addArrangedSubview(favouriteButton)
         
         overlayView.addSubview(
             carNameLabel,
@@ -85,10 +127,13 @@ final class CarDetailsTableViewCell: UITableViewCell {
             checkPriceButton,
             carImagesCollectionView,
             sellStatusButton,
-            actionsStackView
+            actionsStackView,
+            separatorView,
+            carAboutLabel,
+            announcementStatusStackView,
+            cityLabel,
+            dateLabel
         )
-        
-//        actionsStackView.
         
         NSLayoutConstraint.activate([
             overlayView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
@@ -121,11 +166,33 @@ final class CarDetailsTableViewCell: UITableViewCell {
             sellStatusButton.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -15),
             sellStatusButton.heightAnchor.constraint(equalToConstant: 70),
             
-            actionsStackView.topAnchor.constraint(equalTo: sellStatusButton.topAnchor, constant: 10),
+            actionsStackView.topAnchor.constraint(equalTo: sellStatusButton.bottomAnchor, constant: 10),
             actionsStackView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 15),
             actionsStackView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -15),
             
-            sellStatusButton.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -10),
+            separatorView.topAnchor.constraint(equalTo: actionsStackView.bottomAnchor, constant: 10),
+            separatorView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
+            
+            
+            carAboutLabel.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 20),
+            carAboutLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 20),
+            carAboutLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -20),
+            
+            
+            announcementStatusStackView.topAnchor.constraint(equalTo: carAboutLabel.bottomAnchor, constant: 15),
+            announcementStatusStackView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 20),
+
+            cityLabel.topAnchor.constraint(equalTo: announcementStatusStackView.bottomAnchor, constant: 15),
+            cityLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 20),
+            cityLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -20),
+            
+            dateLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 5),
+            dateLabel.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 20),
+            dateLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -20),
+            
+            dateLabel.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -20),
         ])
     }
     
@@ -159,5 +226,78 @@ final class CarDetailsTableViewCell: UITableViewCell {
         
         carPriceRublesLabel.attributedText = attributedString
         carPriceDollarsLabel.attributedText = attributedStringDollars
+    }
+    
+    private func configureStatusStackView(status: [AnnouncementStatus]) {
+        let topViewConfiguration = IconViewConfiguration(
+            systemName: Icons.starFill,
+            title: "ТОП",
+            bgColor: .topColor,
+            cornerRadius: 3,
+            imageSize: 8,
+            imageWeight: .regular,
+            imageColor: .black,
+            textColor: .black,
+            textSpacing: 1,
+            fontSize: 10,
+            fontWeight: .semibold
+        )
+        
+        let topView = IconViewBuilder()
+            .setConfiguration(topViewConfiguration)
+            .setPosition(.left)
+            .setWidth(50)
+            .setHeight(20)
+            .build()
+        
+        let vinViewConfiguration = IconViewConfiguration(
+            systemName: Icons.checkmark,
+            title: "VIN",
+            bgColor: .vinColor,
+            cornerRadius: 3,
+            imageSize: 10,
+            imageWeight: .semibold,
+            imageColor: .white,
+            textColor: .white,
+            textSpacing: 1,
+            fontSize: 10,
+            fontWeight: .semibold
+        )
+        
+        let vinView = IconViewBuilder()
+            .setConfiguration(vinViewConfiguration)
+            .setPosition(.right)
+            .setWidth(45)
+            .setHeight(20)
+            .build()
+        
+        announcementStatusStackView.arrangedSubviews.forEach { view in
+            announcementStatusStackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        
+        for announcementStatus in status {
+            switch announcementStatus {
+            case .top:
+                topView.translatesAutoresizingMaskIntoConstraints = false
+                announcementStatusStackView.addArrangedSubview(topView)
+            case .vin:
+                vinView.translatesAutoresizingMaskIntoConstraints = false
+                announcementStatusStackView.addArrangedSubview(vinView)
+            case .new:
+                print("new")
+            case .video:
+                print("video")
+            }
+        }
+    }
+    
+    private func configureAboutLabel(car: Car) {
+        var resultStr = ""
+        let engine = car.engineType.rawValue
+        let type = car.bodyType.rawValue
+        
+        resultStr = "\(car.releaseYear) г., \(car.capacity) л, \(engine), \(type), \(car.milieage) км"
+        carAboutLabel.text = resultStr
     }
 }

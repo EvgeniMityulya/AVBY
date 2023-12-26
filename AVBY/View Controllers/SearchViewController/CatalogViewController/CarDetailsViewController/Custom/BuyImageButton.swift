@@ -93,12 +93,12 @@ final class BuyImageButton: UIButton {
         
         let leftTextAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 13, weight: .semibold),
-            .foregroundColor: UIColor.buttonTextColor
+            .foregroundColor: UIColor.detailsBlueColor
         ]
         
         let rightTextAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 13, weight: .semibold),
-            .foregroundColor: UIColor.buttonTextColor
+            .foregroundColor: UIColor.detailsBlueColor
         ]
         
         let leftString = NSMutableAttributedString()
@@ -109,7 +109,7 @@ final class BuyImageButton: UIButton {
         let boldRange = (rightText as NSString).range(of: "\(monthlyPayment) \(currency)")
         rightString.addAttributes([
             .font: UIFont.systemFont(ofSize: 14, weight: .semibold),
-            .foregroundColor: UIColor.buttonTextColor
+            .foregroundColor: UIColor.detailsBlueColor
         ], range: boldRange)
         
         
