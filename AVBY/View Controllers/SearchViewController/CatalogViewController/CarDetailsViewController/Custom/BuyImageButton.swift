@@ -47,7 +47,6 @@ final class BuyImageButton: UIButton {
         
         labelsStackView.translatesAutoresizingMaskIntoConstraints = false
         sellStatusLabel.translatesAutoresizingMaskIntoConstraints = false
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
         companyImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -65,6 +64,9 @@ final class BuyImageButton: UIButton {
     private func setupUI() {
         self.backgroundColor = .buttonColor
         self.layer.cornerRadius = 8
+        
+        labelsStackView.isUserInteractionEnabled = false
+        companyImageView.isUserInteractionEnabled = false
         
         labelsStackView.backgroundColor = .clear
         labelsStackView.axis = .vertical

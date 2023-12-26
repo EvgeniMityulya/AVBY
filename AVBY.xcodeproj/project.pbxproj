@@ -10,7 +10,6 @@
 		7B0980762B377AEE0043BB1E /* CarDetailsCommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0980752B377AEE0043BB1E /* CarDetailsCommonTableViewCell.swift */; };
 		7B0980782B3AD5460043BB1E /* CarOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0980772B3AD5460043BB1E /* CarOptions.swift */; };
 		7B09807A2B3AD72E0043BB1E /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0980792B3AD72E0043BB1E /* Equipment.swift */; };
-		7B09807C2B3AEC120043BB1E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09807B2B3AEC120043BB1E /* RoundedButton.swift */; };
 		7B7153092B2E052D0056B305 /* CarDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7153082B2E052D0056B305 /* CarDetailsSection.swift */; };
 		7B71530B2B2E4F650056B305 /* CarDetailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */; };
 		7B71530D2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */; };
@@ -65,7 +64,6 @@
 		7B0980752B377AEE0043BB1E /* CarDetailsCommonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCommonTableViewCell.swift; sourceTree = "<group>"; };
 		7B0980772B3AD5460043BB1E /* CarOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOptions.swift; sourceTree = "<group>"; };
 		7B0980792B3AD72E0043BB1E /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
-		7B09807B2B3AEC120043BB1E /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7B7153082B2E052D0056B305 /* CarDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsSection.swift; sourceTree = "<group>"; };
 		7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCollectionView.swift; sourceTree = "<group>"; };
 		7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -368,7 +366,6 @@
 				7B71530A2B2E4F650056B305 /* CarDetailsCollectionView.swift */,
 				7B71530C2B2E4FD20056B305 /* CarDetailsCollectionViewCell.swift */,
 				7B71530F2B30A9E10056B305 /* BuyImageButton.swift */,
-				7B09807B2B3AEC120043BB1E /* RoundedButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -490,7 +487,6 @@
 				7BB652922B22740F003DB863 /* AnnouncementStatus.swift in Sources */,
 				7BB6528B2B21E08E003DB863 /* UILabel + Extensions.swift in Sources */,
 				7BB652472B1F6B63003DB863 /* AnnouncementViewController.swift in Sources */,
-				7B09807C2B3AEC120043BB1E /* RoundedButton.swift in Sources */,
 				7BB652402B1E5E43003DB863 /* SearchBuilder.swift in Sources */,
 				7BB652EC2B2BAC01003DB863 /* CarDetailsPresenter.swift in Sources */,
 			);

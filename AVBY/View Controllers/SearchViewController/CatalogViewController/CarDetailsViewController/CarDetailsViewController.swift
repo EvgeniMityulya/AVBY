@@ -25,11 +25,8 @@ final class CarDetailsViewController: UIViewController {
     private var sections = [CarDetailsSection]()
     
     private let bottomStackView = UIStackView()
-    private let callButton = IconTextButton(
-        iconName: "",
-        title: "Позвонить"
-    )
-    private let textButton = IconButton(iconName: Icons.sparkleMagnifyingglass, iconSize: 16)
+    private let callButton = IconTextButton(iconName: "", title: "Позвонить...")
+    private let textButton = IconButton(iconName: Icons.ellipsisFill, iconSize: 18)
     private let detailsTableView = UITableView(frame: .zero, style: .plain)
     
     override func viewDidLoad() {
@@ -90,12 +87,16 @@ extension CarDetailsViewController: CarDetailsViewInput {
         detailsTableView.backgroundColor = .buttonColor
         detailsTableView.register(CarDetailsMainTableViewCell.self, forCellReuseIdentifier: "CarDetailsMainCell")
         detailsTableView.register(CarDetailsCommonTableViewCell.self, forCellReuseIdentifier: "CarDetailsCommonCell")
+        detailsTableView.contentInset =  UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
         
         bottomStackView.backgroundColor = .clear
         bottomStackView.axis = .horizontal
-        bottomStackView.distribution = .equalCentering
+        bottomStackView.distribution = .fillProportionally
         bottomStackView.alignment = .center
-        bottomStackView.spacing = 3
+        bottomStackView.spacing = 5
+        
+        callButton.backgroundColor = .vinColor
+        textButton.backgroundColor = .vinColor
         
         callButton.addTarget(self, action: #selector(callButtonTapped), for: .touchUpInside)
         textButton.addTarget(self, action: #selector(textButtonTapped), for: .touchUpInside)
@@ -137,7 +138,12 @@ extension CarDetailsViewController: CarDetailsViewInput {
             detailsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             detailsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             
-            bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            callButton.heightAnchor.constraint(equalToConstant: 50),
+            textButton.heightAnchor.constraint(equalToConstant: 50),
+            textButton.widthAnchor.constraint(equalTo: callButton.widthAnchor, multiplier: 0.3),
+            
+            bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
@@ -162,7 +168,6 @@ extension CarDetailsViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        
         return UITableViewCell()
     }
 }

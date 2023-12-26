@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageTextButton: UIButton {
+final class ImageTextButton: UIButton {
     
     // MARK: - Properties
     
@@ -71,9 +71,9 @@ class ImageTextButton: UIButton {
         stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 5
+        stackView.isUserInteractionEnabled = false
         
         iconImageView.layer.cornerRadius = 3
-        
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.layer.masksToBounds = true
     }

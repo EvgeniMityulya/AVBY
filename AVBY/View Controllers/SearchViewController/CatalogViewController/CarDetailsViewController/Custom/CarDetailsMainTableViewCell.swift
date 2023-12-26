@@ -13,7 +13,6 @@ final class CarDetailsMainTableViewCell: UITableViewCell {
     
     private var car: Car?
     
-    
     // MARK: - UI Elements
     
     private let overlayView = UIView()
@@ -67,6 +66,26 @@ final class CarDetailsMainTableViewCell: UITableViewCell {
         sellStatusButton.setText(sellStatus: car.sellStatus, price: car.priceDollars, years: 5, currency: "USD")
     }
     
+    @objc private func shareButtonTapped() {
+        print("Share Button Tapped")
+    }
+    
+    @objc private func commentButtonTapped() {
+        print("Comment Button Tapped")
+    }
+    
+    @objc private func favouriteButtonTapped() {
+        print("Favourite Button Tapped")
+    }
+    
+    @objc private func sellStatusButtonTapped() {
+        print("Sell Status Button Tapped")
+    }
+    
+    @objc private func checkPriceButtonTapped() {
+        print("Check Price Button Tapped")
+    }
+    
     private func setupStyles() {
         overlayView.backgroundColor = .cellColor
         carNameLabel.applyTextStyle(textColor: .titleColor, fontSize: 18, weight: .medium)
@@ -97,6 +116,12 @@ final class CarDetailsMainTableViewCell: UITableViewCell {
         checkPriceButton.cornerRadius = 8
         
         separatorView.backgroundColor = .separatorColor
+        
+        sellStatusButton.addTarget(self, action: #selector(sellStatusButtonTapped), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        commentButton.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
+        favouriteButton.addTarget(self, action: #selector(favouriteButtonTapped), for: .touchUpInside)
+        checkPriceButton.addTarget(self, action: #selector(checkPriceButtonTapped), for: .touchUpInside)
     }
     
     private func configureConstraints() {
