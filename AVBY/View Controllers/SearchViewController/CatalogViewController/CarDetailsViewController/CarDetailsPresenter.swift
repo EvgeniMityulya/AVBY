@@ -10,6 +10,7 @@ import Foundation
 protocol CarDetailsViewOutput {
     func viewDidLoad()
     func viewWillAppear()
+    func viewWillDisappear()
     func setupModel(car: Car)
 }
 
@@ -27,11 +28,18 @@ final class CarDetailsPresenter: CarDetailsViewOutput {
         input.makeSections()
     }
     
+    func viewWillAppear() {
+        input.configureNavigationBar()
+        input.hideBottomTabBar()
+    }
+    
+    func viewWillDisappear() {
+        input.showBottomTabBar()
+    }
+    
     func setupModel(car: Car) {
         input.setData(car: car)
     }
     
-    func viewWillAppear() {
-        input.configureNavigationBar()
-    }
+    
 }

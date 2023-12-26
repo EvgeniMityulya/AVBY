@@ -38,8 +38,16 @@ final class CatalogViewController: UIViewController {
         output?.viewWillAppear()
     }
     
-    @objc func sortButtonTapped() {
+    @objc private func sortButtonTapped() {
         print("Sort Button Tapped")
+    }
+    
+    @objc private func settingsButtonTapped() {
+        print("Settings Button Tapped")
+    }
+    
+    @objc private func searchButtonTapped() {
+        print("Search Button Tapped")
     }
 }
 
@@ -71,7 +79,8 @@ extension CatalogViewController: CatalogViewInput {
         bottomStackView.alignment = .center
         bottomStackView.spacing = 3
         
-        
+        firstBottomButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        secondBottomButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
     }
     
     func configureConstraints() {
@@ -104,14 +113,6 @@ extension CatalogViewController: CatalogViewInput {
             secondBottomButton.widthAnchor.constraint(equalToConstant: 170),
             secondBottomButton.heightAnchor.constraint(equalToConstant: 45),
         ])
-    }
-    
-    @objc private func firstBottomButtonTapped() {
-        print("First Bottom Button Tapped")
-    }
-    
-    @objc private func secondBottomButtonTapped() {
-        print("Second Bottom Button Tapped")
     }
 }
 

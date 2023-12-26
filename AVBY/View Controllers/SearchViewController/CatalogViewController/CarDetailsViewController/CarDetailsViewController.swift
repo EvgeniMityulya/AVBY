@@ -13,6 +13,8 @@ protocol CarDetailsViewInput: AnyObject {
     func configureNavigationBar()
     func setData(car: Car)
     func makeSections()
+    func hideBottomTabBar()
+    func showBottomTabBar()
 }
 
 final class CarDetailsViewController: UIViewController {
@@ -22,6 +24,12 @@ final class CarDetailsViewController: UIViewController {
     private var car: Car?
     private var sections = [CarDetailsSection]()
     
+    private let bottomStackView = UIStackView()
+    private let callButton = IconTextButton(
+        iconName: "",
+        title: "Позвонить"
+    )
+    private let textButton = IconButton(iconName: Icons.sparkleMagnifyingglass, iconSize: 16)
     private let detailsTableView = UITableView(frame: .zero, style: .plain)
     
     override func viewDidLoad() {
@@ -31,13 +39,27 @@ final class CarDetailsViewController: UIViewController {
         output?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output?.viewWillAppear()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        output?.viewWillDisappear()
+    }
+    
     @objc private func moreButtonTapped() {
         print("First Bottom Button Tapped")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        output?.viewWillAppear()
+    
+    @objc private func callButtonTapped() {
+        print("Call Button Tapped")
+    }
+    
+    @objc private func textButtonTapped() {
+        print("Text Button Tapped")
     }
 }
 
@@ -68,6 +90,15 @@ extension CarDetailsViewController: CarDetailsViewInput {
         detailsTableView.backgroundColor = .buttonColor
         detailsTableView.register(CarDetailsMainTableViewCell.self, forCellReuseIdentifier: "CarDetailsMainCell")
         detailsTableView.register(CarDetailsCommonTableViewCell.self, forCellReuseIdentifier: "CarDetailsCommonCell")
+        
+        bottomStackView.backgroundColor = .clear
+        bottomStackView.axis = .horizontal
+        bottomStackView.distribution = .equalCentering
+        bottomStackView.alignment = .center
+        bottomStackView.spacing = 3
+        
+        callButton.addTarget(self, action: #selector(callButtonTapped), for: .touchUpInside)
+        textButton.addTarget(self, action: #selector(textButtonTapped), for: .touchUpInside)
     }
     
     func configureNavigationBar() {
@@ -75,24 +106,41 @@ extension CarDetailsViewController: CarDetailsViewInput {
         self.navigationController?.setupMavigationBar(backgroundColor: .cellColor, titleColor: .titleColor, title: "", sender: self)
         self.navigationController?.setupBarButtonItem(imageName: Icons.ellipsis, tintColor: .barIconActiveColor, target: self, action: #selector(moreButtonTapped), position: .right)
         self.tabBarController?.setupTabBar(backgroundColor: .tabBarColor, unselectedItemTintColor: .barIconUnactiveColor, selectedItemTintColor: .barIconActiveColor)
+        
+    }
+    
+    func hideBottomTabBar() {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func showBottomTabBar() {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func configureConstraints() {
         view.addSubview(
-            detailsTableView
+            detailsTableView,
+            bottomStackView
         )
         
         detailsTableView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+        callButton.translatesAutoresizingMaskIntoConstraints = false
+        textButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        bottomStackView.addArrangedSubview(callButton)
+        bottomStackView.addArrangedSubview(textButton)
         
         NSLayoutConstraint.activate([
             detailsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            detailsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            detailsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             detailsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             detailsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            
+            bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
-    
-    
 }
 
 extension CarDetailsViewController: UITableViewDelegate, UITableViewDataSource {

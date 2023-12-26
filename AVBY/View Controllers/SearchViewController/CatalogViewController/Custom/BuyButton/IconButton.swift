@@ -57,11 +57,5 @@ final class IconButton: UIButton {
         layer.cornerRadius = cornerRadius
         
         self.configuration = buttonConfig
-        
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped() {
-        print("Search button tapped")
     }
 }

@@ -42,11 +42,5 @@ final class IconTextButton: UIButton {
         layer.cornerRadius = 10
         
         self.configuration = buttonConfig
-        
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped() {
-        print("Settings button tapped")
     }
 }
