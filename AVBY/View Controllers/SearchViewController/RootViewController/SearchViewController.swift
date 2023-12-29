@@ -12,7 +12,7 @@ protocol SearchViewInput: AnyObject {
     func pushViewController(withViewController viewController: UIViewController)
 }
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     
     var output: SearchViewOutput?
     
@@ -34,7 +34,6 @@ extension SearchViewController: SearchViewInput {
     }
     
     func configureUI() {
-//        title = ""
         configureConstraints()
         configureButtons()
     }

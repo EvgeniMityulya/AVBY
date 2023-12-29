@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BuyButton: UIButton {
+final class BuyButton: UIButton {
     
     // MARK: - Properties
 
@@ -16,8 +16,8 @@ class BuyButton: UIButton {
     
     // MARK: - Public Methods
     
-    func setText(sellStatus: SellStatus, price: Double, years: Int) {
-        configureLabels(sellStatus: sellStatus, price: price, years: years)
+    func setText(sellStatus: SellStatus, price: Double, years: Int, currency: String) {
+        configureLabels(sellStatus: sellStatus, price: price, years: years, currency: currency)
     }
     
     // MARK: - Initialization
@@ -35,8 +35,10 @@ class BuyButton: UIButton {
     // MARK: - Private Methods
     
     private func setupSubviews() {
-        addSubview(leftLabel)
-        addSubview(rightLabel)
+        addSubview(
+            leftLabel,
+            rightLabel
+        )
         
         leftLabel.textAlignment = .left
         rightLabel.textAlignment = .right
@@ -57,7 +59,7 @@ class BuyButton: UIButton {
         ])
     }
     
-    func configureLabels(sellStatus: SellStatus, price: Double, years: Int) {
+    func configureLabels(sellStatus: SellStatus, price: Double, years: Int, currency: String) {
         var leftText = ""
         
         switch sellStatus {
@@ -68,7 +70,7 @@ class BuyButton: UIButton {
         }
         
         let monthlyPayment = Int(price) / (years * 12)
-        let rightText = "от \(monthlyPayment) USD/месяц"
+        let rightText = "от \(monthlyPayment) \(currency)/месяц"
         
         let leftTextAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 13, weight: .regular),
@@ -85,7 +87,7 @@ class BuyButton: UIButton {
         leftString.append(NSAttributedString(string: leftText, attributes: leftTextAttributes))
         
         let rightString = NSMutableAttributedString(string: rightText, attributes: rightTextAttributes)
-            let boldRange = (rightText as NSString).range(of: "\(monthlyPayment) USD")
+            let boldRange = (rightText as NSString).range(of: "\(monthlyPayment) \(currency)")
             rightString.addAttributes([
                 .font: UIFont.systemFont(ofSize: 14, weight: .bold),
                 .foregroundColor: UIColor.buttonTextColor

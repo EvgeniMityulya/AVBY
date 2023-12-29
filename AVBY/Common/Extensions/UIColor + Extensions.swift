@@ -59,4 +59,16 @@ extension UIColor {
     static var bottomButtonColor: UIColor {
         return UIColor(named: "bottomButton") ?? .black
     }
+    
+    static var buttonColor: UIColor {
+        return UIColor(named: "button") ?? .black
+    }
+    
+    static var buttonDownTintColor: UIColor {
+        return UIColor(named: "buttonDownTint") ?? .black
+    }
+    
+    static var detailsBlueColor: UIColor {
+        return UIColor(named: "detailsBlue") ?? .black
+    }
 }

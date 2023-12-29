@@ -15,7 +15,7 @@ protocol IconViewBuildable {
     func build() -> IconView
 }
 
-class IconViewBuilder: IconViewBuildable {
+final class IconViewBuilder: IconViewBuildable {
     private var configuration: IconViewConfiguration = IconViewConfiguration()
     private var position: Position = .left
     private var width: CGFloat = 1

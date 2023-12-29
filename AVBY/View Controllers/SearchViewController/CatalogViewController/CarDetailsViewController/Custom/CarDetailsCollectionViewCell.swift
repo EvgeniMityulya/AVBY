@@ -1,27 +1,13 @@
 //
-//  CarImagesCollectionViewCell.swift
+//  CarDetailsCollectionViewCell.swift
 //  AVBY
 //
-//  Created by Евгений Митюля on 12/9/23.
+//  Created by Евгений Митюля on 12/17/23.
 //
 
 import UIKit
 
-final class CarImagesCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - Properties
-    
-    var isFirstCell: Bool = false {
-        didSet {
-            updateCornerRadius()
-        }
-    }
-    
-    var isLastCell: Bool = false {
-        didSet {
-            updateCornerRadius()
-        }
-    }
+final class CarDetailsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Elements
     
@@ -37,13 +23,6 @@ final class CarImagesCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
-    }
-    
-    // MARK: - Lifecycle
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        resetCornerRadius()
     }
     
     // MARK: - Public Methods
@@ -74,24 +53,8 @@ final class CarImagesCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureImageView() {
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-    }
-    
-    private func resetCornerRadius() {
-        imageView.layer.cornerRadius = 0
-        imageView.layer.maskedCorners = []
-    }
-    
-    private func updateCornerRadius() {
-        if self.isFirstCell {
-            imageView.layer.cornerRadius = 10
-            imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        } else if self.isLastCell {
-            imageView.layer.cornerRadius = 10
-            imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        } else {
-            resetCornerRadius()
-        }
+        imageView.layer.cornerRadius = 10
     }
 }

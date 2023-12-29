@@ -1,13 +1,13 @@
 //
-//  CarImagesCollectionView.swift
+//  CarDetailsCollectionView.swift
 //  AVBY
 //
-//  Created by Евгений Митюля on 12/7/23.
+//  Created by Евгений Митюля on 12/17/23.
 //
 
 import UIKit
 
-final class CarImagesCollectionView: UICollectionView {
+final class CarDetailsCollectionView: UICollectionView {
     
     // MARK: - Properties
     
@@ -22,8 +22,8 @@ final class CarImagesCollectionView: UICollectionView {
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 3
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.minimumLineSpacing = 3
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         
         super.init(frame: .zero, collectionViewLayout: layout)
         configureCollectionView()
@@ -46,7 +46,7 @@ final class CarImagesCollectionView: UICollectionView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.showsHorizontalScrollIndicator = false
         self.backgroundColor = .clear
-        self.register(CarImagesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        self.register(CarDetailsCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.delegate = self
         self.dataSource = self
     }
@@ -54,23 +54,16 @@ final class CarImagesCollectionView: UICollectionView {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
-extension CarImagesCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CarDetailsCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return car?.imageName.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CarImagesCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CarDetailsCollectionViewCell
         
         guard let car = car else {
             return cell
-        }
-        cell.isFirstCell = false
-        cell.isLastCell = false
-        if indexPath.item == 0 {
-            cell.isFirstCell = true
-        } else if indexPath.item == collectionView.numberOfItems(inSection: 0) - 1 {
-            cell.isLastCell = true
         }
         
         let carImageName = car.imageName[indexPath.item]
@@ -82,24 +75,15 @@ extension CarImagesCollectionView: UICollectionViewDelegate, UICollectionViewDat
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension CarImagesCollectionView: UICollectionViewDelegateFlowLayout {
+extension CarDetailsCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let carImageName = car?.imageName[indexPath.item],
-              let image = UIImage(named: carImageName),
+              let _ = UIImage(named: carImageName),
               let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
-            if let placeholderImage = UIImage(named: "noImage") {
-                let aspectRatio = placeholderImage.size.width / placeholderImage.size.height
-                let height: CGFloat = collectionView.frame.height - collectionView.contentInset.top - collectionView.contentInset.bottom
-                let width = height * aspectRatio
-                return CGSize(width: width, height: height)
-            } else {
-                return CGSize(width: 100, height: 100)
-            }
+            return CGSize(width: max(collectionView.frame.width - 10, 0), height: 240)
         }
-        
-        let aspectRatio = image.size.width / image.size.height
         let height: CGFloat = collectionView.frame.height - flowLayout.sectionInset.top - flowLayout.sectionInset.bottom
-        let width = height * aspectRatio
+        let width = collectionView.frame.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
         return CGSize(width: width, height: height)
     }
 }
